@@ -1,6 +1,6 @@
 # Issues — Arriven/db1000n
 
-Total: **252** issues
+Total: **244** issues
 
 
 ## #569 warn failed to fetch config {"path": "", "error": "open : no such file or directory"} ----how do I fix this?
@@ -378,19 +378,6 @@ Total: **252** issues
 - **@arriven** (2022-05-08): the idea was to have a way to utilize cpu better by not needing to do unnecessary work if the goal is to just spam the target with traffic. I then realized that it's better done by utilizing...
 </details>
 
-## #533 Why is db1000n so slow...
-**State:** CLOSED | **Author:** @deputinizer | **Created:** 2022-05-06 | **Updated:** 2022-05-08 | **Comments:** 2
-
-> ![image](https://user-images.githubusercontent.com/100740281/167130319-13cc00bb-4cb0-4714-b4e0-1cad7bfb8008.png)
-> 
-> I'm pressing ctrl+C
-
-<details><summary>Comments (2)</summary>
-
-- **@deputinizer** (2022-05-06): And why is this metrics thing so retarded <details>   <summary>[Spoiler] pprof CPU</summary>  ...
-- **@deputinizer** (2022-05-06): Resolver can be optimized like in stoppropaganda https://github.com/erkexzcx/stoppropaganda/tree/main/internal/spdnsclient <details>   <summary>[Spoiler] pprof CPU</summary>  ...
-</details>
-
 ## #532 Killed. on 400MB ram machine
 **State:** CLOSED | **Author:** @deputinizer | **Created:** 2022-05-05 | **Updated:** 2022-05-05 | **Comments:** 2
 
@@ -685,18 +672,6 @@ Total: **252** issues
 
 - **@arriven** (2022-04-18): Right now it seems like the targets are using some heavy geo blocking and I don't think we can do anything about it, admins are evaluating whether it's better to continue or change the target
 - **@sash-ko** (2022-04-18): Thank you for the quick answer
-</details>
-
-## #509 Country check from russia under vpn is blocked
-**State:** CLOSED | **Author:** @zeratulus | **Created:** 2022-04-16 | **Updated:** 2022-04-24 | **Comments:** 1
-
-> db1000n used with ProtonVPN, Ubuntu 20.04 and under VirtualBox.
-> 
-> I think it bad idea to check country because roskomnadzor can use this to detect DDoS attacks by this app...
-
-<details><summary>Comments (1)</summary>
-
-- **@zeratulus** (2022-04-19): Today, after updates seems like country detection works fine... ProtonVPN + russia
 </details>
 
 ## #504 Terraform Docker Container Update
@@ -1605,16 +1580,6 @@ Total: **252** issues
 - **@arriven** (2022-03-25): Hm, weird, which executable version do you use? The "static_host" feature was added in v0.8.2 and as far as I see it should be used there. If your version is up to date can you send some logs my way...
 - **@sq2mo** (2022-03-25): I use v0.8.1.
 - **@sq2mo** (2022-03-25): Ok, could not replicate this problem on a newest 0.8.7. Going to production.
-</details>
-
-## #402 not work, does not start
-**State:** CLOSED | **Author:** @RydIgorOk | **Created:** 2022-03-23 | **Updated:** 2022-03-23 | **Comments:** 1
-
-> ![image](https://user-images.githubusercontent.com/22442729/159774068-b67b5dca-a98d-4866-a9d8-eac0827141f0.png)
-
-<details><summary>Comments (1)</summary>
-
-- **@RydIgorOk** (2022-03-23): you need to disable your antivirus
 </details>
 
 ## #401 Failed to unmarshal job configs, will keep the current one: invalid character '}' looking for beginning of object key string
@@ -2688,21 +2653,6 @@ Total: **252** issues
 - **@iamtodor** (2022-03-07): duplicate. should be closed @Arriven
 </details>
 
-## #222 terraform aws use spot instances 
-**State:** CLOSED | **Author:** @industral | **Created:** 2022-03-07 | **Updated:** 2022-03-07 | **Comments:** 2
-
-> So far we pay for on demand instances, and it takes money.
-> Using spot instances - cheeper and allow to run more server for the same money :)
-> 
-> Need spot instances configuration for aws.
-> Thanks :)
-
-<details><summary>Comments (2)</summary>
-
-- **@iamtodor** (2022-03-07): @industral @Arriven wasn't it implemented here https://github.com/Arriven/db1000n/pull/213 ?
-- **@industral** (2022-03-07): Many thanks! You guys do changes too fast :)
-</details>
-
 ## #221 Why it finishes working after a minute or less?
 **State:** CLOSED | **Author:** @ivan-huligan | **Created:** 2022-03-07 | **Updated:** 2022-03-08 | **Comments:** 13
 
@@ -2913,12 +2863,6 @@ Total: **252** issues
 - **@neuton** (2022-03-21): I believe the only alternative way (under Linux) is to set CAP_NET_RAW capability on the executable, as mentioned by answers here...
 </details>
 
-## #195 missing value for "attack_environment_variables" for azure terraform config
-**State:** CLOSED | **Author:** @nonchalant-enthusiast | **Created:** 2022-03-06 | **Updated:** 2022-03-07 | **Comments:** 0
-
-> empty default value was removed from the variable: https://github.com/Arriven/db1000n/blame/main/terraform/azure/bomblet/variables.tf#L21
-> now the terraform deployment is failing because of it
-
 ## #194 docs with mkdocs
 **State:** CLOSED | **Author:** @m-v-kalashnikov | **Created:** 2022-03-06 | **Updated:** 2022-03-31 | **Comments:** 1
 
@@ -3041,11 +2985,6 @@ Total: **252** issues
 **State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 0
 
 > I've created a separate image pointing to another config instance using specific attacks that are harder to detect and don't impact bills as much. We should switch guides for clouds to use it by default to avoid issues like high traffic billing or cloud provider locking up the instance thinking it...
-
-## #174 ignore
-**State:** CLOSED | **Author:** @su-hs | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 0
-
-> false alarm
 
 ## #170 DDoS effectiveness is not directly tied to the amount of traffic generated `[documentation, help wanted, priority: medium]`
 **State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 5
@@ -3475,31 +3414,6 @@ Total: **252** issues
 
 - **@arriven** (2022-03-04): Check out supervisord/ and run/ subfolders for that, feel free to open a PR if it can be further improved
 - **@ctukraine22** (2022-03-05): бачу вже доку додали https://github.com/Arriven/db1000n/blob/main/docs/advanced-users-and-devs.md#docker--openvpn
-</details>
-
-## #110 Check if user enabled VPN and so whether attack will be effective
-**State:** CLOSED | **Author:** @Devaniti | **Created:** 2022-03-04 | **Updated:** 2022-03-05 | **Comments:** 0
-
-> If user's IP address detected as Ukrainian, open page in browser with instruction on how to setup VPN.
-> Will try to do myself.
-
-## #109 Some proxies in proxylist have port 8010 instead of 1080 `[invalid]`
-**State:** CLOSED | **Author:** @constantin-ukr | **Created:** 2022-03-04 | **Updated:** 2022-03-31 | **Comments:** 2
-
-> Into file proxylist.json
-> 
-> has Ip with port *8010* but general used *1080*.
-> 
-> "124.172.232.49:8010",
-> "89.108.112.1:8010",
-> etc.
-> 
-> Is it issue or correct?
-
-<details><summary>Comments (2)</summary>
-
-- **@arfgdev** (2022-03-05): could you describe a way to reproduce it?
-- **@constantin-ukr** (2022-03-05): As I understand the target takes from the list "proxylist.json", and if open it and find the text ":8010" you can over 20 matches. I do not say that is incorrect but should check. Thanks
 </details>
 
 ## #105 OOM issue 
