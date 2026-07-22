@@ -38,6 +38,7 @@ import (
 
 	"github.com/Arriven/db1000n/src/job"
 	"github.com/Arriven/db1000n/src/job/config"
+	"github.com/Arriven/db1000n/src/platform/mobile"
 	"github.com/Arriven/db1000n/src/utils"
 	"github.com/Arriven/db1000n/src/utils/metrics"
 	"github.com/Arriven/db1000n/src/utils/ota"
@@ -46,6 +47,8 @@ import (
 const simpleLogFormat = "simple"
 
 func main() {
+	mobile.InitTerminal()
+
 	runnerConfigOptions := job.NewConfigOptionsWithFlags()
 	jobsGlobalConfig := job.NewGlobalConfigWithFlags()
 	otaConfig := ota.NewConfigWithFlags()
@@ -100,7 +103,14 @@ func main() {
 	defer cancel()
 
 	metrics.InitOrFail(ctx, logger, *prometheusOn, *prometheusListenAddress, jobsGlobalConfig.ClientID, "")
-	job.NewRunner(runnerConfigOptions, jobsGlobalConfig, newReporter(*logFormat, *lessStats, logger)).Run(ctx, logger)
+
+	runner := job.NewRunner(runnerConfigOptions, jobsGlobalConfig, newReporter(*logFormat, *lessStats, logger))
+	if mobile.IsMobile {
+		go runner.Run(ctx, logger)
+		mobile.RunTerminal()
+	} else {
+		runner.Run(ctx, logger)
+	}
 }
 
 func periodicGC(enabled *bool, period time.Duration, log *zap.Logger) {
