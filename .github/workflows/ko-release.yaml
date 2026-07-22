@@ -17,11 +17,11 @@ jobs:
     name: Publish docker image with ko
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-go@v2
+      - uses: actions/setup-go@v5
         with:
-          go-version: 1.18
-      - uses: actions/checkout@v2
-      - uses: imjasonh/setup-ko@v0.6
+          go-version: "1.25"
+      - uses: actions/checkout@v4
+      - uses: imjasonh/setup-ko@v0.8
       - run: KO_DOCKER_REPO=${DOCKER_REPO,,} ko publish --bare --tags ${{ github.ref_name }},latest --platform all .
         env:
           VERSION: ${{ github.ref_name }}

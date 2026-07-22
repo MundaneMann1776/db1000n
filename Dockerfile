@@ -1,4 +1,4 @@
-FROM golang:1.18 as builder
+FROM golang:1.25 as builder
 
 WORKDIR /build
 # pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
@@ -12,7 +12,7 @@ ARG CA_PATH_VALUE
 ARG PROMETHEUS_BASIC_AUTH
 RUN make build_encrypted
 
-FROM alpine:3.15.2 as advanced
+FROM alpine:3.21 as advanced
 
 RUN apk add --no-cache --update curl
 
@@ -21,7 +21,7 @@ COPY --from=builder /build/db1000n .
 
 CMD ["./db1000n", "--enable-primitive=false"]
 
-FROM alpine:3.15.2
+FROM alpine:3.21
 
 RUN apk add --no-cache --update curl
 

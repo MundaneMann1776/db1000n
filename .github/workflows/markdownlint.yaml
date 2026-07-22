@@ -20,11 +20,11 @@ jobs:
     name: Lint repository
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: "3.4"
       - name: Install mdl
         run: gem install mdl
       - name: Run markdownlint
