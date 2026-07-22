@@ -1,6 +1,6 @@
 # Issues — Arriven/db1000n
 
-Total: **244** issues
+Total: **124** relevant issues (of 252 total)
 
 
 ## #569 warn failed to fetch config {"path": "", "error": "open : no such file or directory"} ----how do I fix this?
@@ -12,42 +12,6 @@ Total: **244** issues
 > root@localhost:~/db1000n# ./db1000n
 > info	running db1000n	{"version":...
 
-## #567 .
-**State:** CLOSED | **Author:** @zuperspasm | **Created:** 2022-09-10 | **Updated:** 2022-10-29 | **Comments:** 2
-
-> ## Expected Behavior
-> 
-> ## Actual Behavior
-> 
-> ## Steps to Reproduce the Problem
-> 
-> ## Specifications
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-09-21): @zuperspasm I'll need a full crash log to be able to determine what's causing it, can you launch the app with something like `db1000n 1> logs.txt 2>&1` and attaching the content here?
-- **@zuperspasm** (2022-10-29): Hi Arriven... Please delete this Issue.  Old PC with lots of problems that was not capable of running the code.  Sorry for wasting your time.
-</details>
-
-## #566 Build unsuccesful by go install
-**State:** CLOSED | **Author:** @Caranthir | **Created:** 2022-08-13 | **Updated:** 2022-08-19 | **Comments:** 4
-
-> I should be able to build from the repository by myself by 
-> `go install github.com/Arriven/db1000n@latest`
-> It doesn't work. It seems that it cannot find the URLs for the configuration files, when I build it myself.
-> 
-> This is the log file:
-> ```
-> info	running db1000n	{"version": "v0.0.1", "pid":...
-
-<details><summary>Comments (4)</summary>
-
-- **@arriven** (2022-08-13): Yeah, if you build from the source you have to specify the path to the config manually via the `-c` flag. You can check the links in the prebuilt binary (`-help` should show default values) or in the...
-- **@Caranthir** (2022-08-14): Thanks for the answer. Now when I enter the link to the config file, I get the following error: `warn	can't decrypt config	{"error": "encryption not supported"}` What am I missing?
-- **@Caranthir** (2022-08-19): Latest release seems to have resolved the issue. But now I get the following error: `error	error running job	{"name": "", "type": "encrypted", "error": "no identity matched any of the...
-- **@arriven** (2022-08-19): yes, that last one is expected when you're building from source since you don't have a private encryption key for some jobs (you can check #394 as to why they're needed at all)
-</details>
-
 ## #563 Non-cumulative stats `[enhancement, priority: medium]`
 **State:** CLOSED | **Author:** @sq2mo | **Created:** 2022-07-21 | **Updated:** 2022-08-01 | **Comments:** 1
 
@@ -56,31 +20,6 @@ Total: **244** issues
 <details><summary>Comments (1)</summary>
 
 - **@arriven** (2022-07-31): version 0.9.15 now outputs both cumulative and non-cumulative stats in format `(stat since last refresh)/(total stat)`. if you use json or console format instead of simple (which is default) it will...
-</details>
-
-## #561 Add new sites?
-**State:** CLOSED | **Author:** @app/ | **Created:** 2022-07-18 | **Updated:** 2022-07-19 | **Comments:** 2
-
-> Sorry if this is wrong place to ask, but can these sites `89.191.237.192`, `rttv.ru` and `rttv.co.uk` be added to list? These don't have DDOS protection from what I know.
-> 
-> RT is the biggest propaganda and it seems IT army or anonymous no longer interested since RT added ddos protection on main...
-
-<details><summary>Comments (2)</summary>
-
-- **@vitich** (2022-07-18): Hi. Go to https://itarmy.com.ua/instruction/?lang=en and press the big button "@Suggest Targets" at the top right.
-- **@** (2022-07-19): > Hi. Go to https://itarmy.com.ua/instruction/?lang=en and press the big button "@Suggest Targets" at the top right.  Thanks! didnt realize there was a button for it
-</details>
-
-## #558 Config path is not available anymore for Digital Ocean deployment 
-**State:** CLOSED | **Author:** @ridox | **Created:** 2022-06-27 | **Updated:** 2022-06-28 | **Comments:** 1
-
-> The URL with targets list is not accessible anymore. Getting 404 status code.
-> Please check out the link to the file below:
-> https://github.com/arriven/db1000n/blob/d742de99591b374123b4cde96596534190fe821e/terraform/digital_ocean/variables.tf#L30
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-06-28): updated, thanks for pointing it out!
 </details>
 
 ## #557 ERROR: HostClient can't follow redirects to a different protocol, please use Client instead
@@ -98,30 +37,6 @@ Total: **244** issues
 <details><summary>Comments (1)</summary>
 
 - **@arriven** (2022-06-26): One of the targets is misconfigured, doesn't affect others but let me take a look
-</details>
-
-## #556 prometheus.go:298: Can't push metrics to gateway
-**State:** CLOSED | **Author:** @wips | **Created:** 2022-06-25 | **Updated:** 2022-06-26 | **Comments:** 2
-
-> ## Expected Behavior
-> No error
-> 
-> ## Actual Behavior
-> 2022/06/25 19:31:16.934473 prometheus.go:298: Can't push metrics to gateway, trying to change gateway
-> 
-> ## Steps to Reproduce the Problem
-> 
->   1. Run db1000n_0.8.7_darwin_amd64 in mac terminal
->   2. Observe logs
-> 
-> ## Specifications
-> 
->   -...
-
-<details><summary>Comments (2)</summary>
-
-- **@wips** (2022-06-25): duplicate
-- **@arriven** (2022-06-26): For this one you can just update to latest
 </details>
 
 ## #555 oom killed
@@ -280,44 +195,6 @@ Total: **244** issues
 > 5.verifies db1000n update
 > the author abandoned it, I...
 
-## #541 Error when pulling docker image
-**State:** CLOSED | **Author:** @sentinalll | **Created:** 2022-05-18 | **Updated:** 2022-05-18 | **Comments:** 1
-
-> ## Expected Behavior
-> Docker image pull successful
-> 
-> ## Actual Behavior
-> error pulling image configuration: download failed after attempts=1: unknown blob
-> 
-> ## Steps to Reproduce the Problem
-> 
->   1. Try pulling the docker image
->   2.
->   3.
-> 
-> ## Specifications
-> 
->   - Version:
->   - Platform:
->   -...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-05-18): ghcr links got broken when I tweaked the account name (Arriven -> arriven, case sensitivity doesn't and shouldn't affect URLs at all, every other related functionality like working with the repo via...
-</details>
-
-## #540 Reference to db1000nX100 project
-**State:** CLOSED | **Author:** @avoylenko | **Created:** 2022-05-16 | **Updated:** 2022-07-19 | **Comments:** 1
-
-> Hello all,
-> 
-> Running a single instance of db1000n requires extra maintenance cost since IP could be banned/blocked temporary really fast and the instance becoming not effective. There is a really good project(https://github.com/ihorlv/db1000nX100) based on db1000n that solves this problem by...
-
-<details><summary>Comments (1)</summary>
-
-- **@vitich** (2022-07-18): https://itarmy.com.ua/instruction/#db1000n  Close the task pls
-</details>
-
 ## #539 Things to optimize - performance
 **State:** CLOSED | **Author:** @deputinizer | **Created:** 2022-05-08 | **Updated:** 2022-05-30 | **Comments:** 10
 
@@ -362,47 +239,6 @@ Total: **244** issues
 - **@arriven** (2022-05-08): hmm, I've quickly run through the source of that pool and I'm not sure I see anything that could lead to a crash except race detection. Anyway that's not a good code and I fixed it already
 </details>
 
-## #534 To Skip, or not to Skip, that is the question
-**State:** CLOSED | **Author:** @deputinizer | **Created:** 2022-05-06 | **Updated:** 2022-05-08 | **Comments:** 1
-
-> Well, SkipBody does something different I think. 
-> ```golang
-> resp.SkipBody = true
-> ```
-> https://github.com/Arriven/db1000n/commit/3147170641eb0c3da75cfc74d68d9606d4e23d5a
-> 
-> The server sends body response but we are ignoring it, thus mishandling the HTTP...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-05-08): the idea was to have a way to utilize cpu better by not needing to do unnecessary work if the goal is to just spam the target with traffic. I then realized that it's better done by utilizing...
-</details>
-
-## #532 Killed. on 400MB ram machine
-**State:** CLOSED | **Author:** @deputinizer | **Created:** 2022-05-05 | **Updated:** 2022-05-05 | **Comments:** 2
-
-> So, how to scale the RAM usage down?
-> 
-> ## Actual Behavior
-> ```console
-> azureuser@azurevm:~/db$ ./db1000n
-> [...]
-> attacking       {"target": "https://fresh.1bitcloud.ru/"}
-> Killed
-> azureuser@azurevm:~/db$ 
-> 
-> ```
-> 
-> ## Steps to Reproduce the Problem
-> 
->   1. Get an Azure account (maybe free 100$...
-
-<details><summary>Comments (2)</summary>
-
-- **@deputinizer** (2022-05-05): Swap helps a lot :)  ![image](https://user-images.githubusercontent.com/100740281/166939098-bd689fdb-6334-422c-bed6-29ec5a5da654.png)  From: https://linuxize.com/post/create-a-linux-swap-file/
-- **@deputinizer** (2022-05-05): ```bash systemctl stop walinuxagent systemctl stop multipathd systemctl stop snapd ```
-</details>
-
 ## #529 Implement --interface option for non-linux systems
 **State:** OPEN | **Author:** @arriven | **Created:** 2022-05-04 | **Updated:** 2022-05-05 | **Comments:** 3
 
@@ -429,20 +265,6 @@ Total: **244** issues
 <details><summary>Comments (1)</summary>
 
 - **@arriven** (2022-05-08): fixed in 060ae19ad8805ef0b7e0b161ac5a1a6f1df6e086
-</details>
-
-## #527 [Question to Developers/Maintainers] Is db1000nX100 considered as trusted rework of db1000n ?
-**State:** CLOSED | **Author:** @dannysilence | **Created:** 2022-05-02 | **Updated:** 2022-05-03 | **Comments:** 3
-
-> Hello there.
-> 
-> Was quiet impressed to read the description of this (https://github.com/ihorlv/db1000nX100), but feeling tentative about to which side of the force it belongs to, considering the fact what db1000n is doing and how easy it is to use it in some form of opposite direction or simply to...
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-05-03): Yes, it's trustworthy.  You can see the reference to that repo on official itarmy website (https://itarmy.com.ua/powerful/?lang=en) and some of the db1000n features were even added by request of...
-- **@dannysilence** (2022-05-03): thank you!
-- **@dannysilence** (2022-05-03): that may definitely help if anyone would have similar question in future as it looks like there were no references from quick look around as i thought yesterday
 </details>
 
 ## #526 -local-address flag does not work
@@ -558,19 +380,6 @@ Total: **244** issues
 - **@deputinizer** (2022-05-08): @Sfinx Fixed IPv6 and countrychecker
 </details>
 
-## #520 How to bind to specific interface ?
-**State:** CLOSED | **Author:** @Sfinx | **Created:** 2022-04-27 | **Updated:** 2022-05-03 | **Comments:** 4
-
-> Having several interfaces and need to force usage of specific one. How to do this ? There is must be option "-I" like ping has or so.
-
-<details><summary>Comments (4)</summary>
-
-- **@arriven** (2022-04-28): As of 0.8.32 you can specify `--local-address <ip>` to achieve that
-- **@Sfinx** (2022-04-28): Thanks !
-- **@deputinizer** (2022-05-03): Also fixed in a7edd0071ee129712fe3ebdf643a75e24c3f1a0a
-- **@Sfinx** (2022-05-03): Works with ipv6 ! But still small bug that was not present at pre 0.8x series - countrycheker still uses ipv4 addressing for country check :  ``` utils/countrychecker.go:78      location info  ...
-</details>
-
 ## #516 How to get the table output that was introduced in v8.0.23?
 **State:** CLOSED | **Author:** @sadviq99 | **Created:** 2022-04-23 | **Updated:** 2022-04-28 | **Comments:** 6
 
@@ -624,17 +433,6 @@ Total: **244** issues
 - **@roman-kruglov** (2022-04-25): I think these particular defects are addressed and fixed, closing the issue
 </details>
 
-## #512 Please add possibility to configure multipart/form-data request from config
-**State:** CLOSED | **Author:** @Vitalii-Gozhenko | **Created:** 2022-04-21 | **Updated:** 2022-04-22 | **Comments:** 2
-
-> It would be nice to have possibility to config `multipart/form-data` requests from config. Currently it is not possible because there is no possibility to insert newline character into the body
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-04-21): Hmm, it should be possible to input newline characters to both json and yaml which are accepted formats here but I'll take a look tomorrow
-- **@arriven** (2022-04-22): yup, it does work, you can probably take look here for examples on how to specify multiline strings in yaml...
-</details>
-
 ## #511 Crash and OS reboot on MacOS Monterey
 **State:** OPEN | **Author:** @serg-music | **Created:** 2022-04-19 | **Updated:** 2022-04-23 | **Comments:** 3
 
@@ -663,17 +461,6 @@ Total: **244** issues
 - **@barnyiv** (2022-04-23): @serg-music https://stackoverflow.com/questions/7578594/how-to-increase-limits-on-sockets-on-osx-for-load-testing try this, should help.
 </details>
 
-## #510 Zero requests sent
-**State:** CLOSED | **Author:** @sash-ko | **Created:** 2022-04-18 | **Updated:** 2022-04-18 | **Comments:** 2
-
-> How can I check that db1000n actually sends requests? "Traffic stats" shows that the number of requests sent is always zero but the number of requests attempted is higher than zero. I see the same results no matter how I run it - with or without VPN, from the command line or as a Docker container,...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-04-18): Right now it seems like the targets are using some heavy geo blocking and I don't think we can do anything about it, admins are evaluating whether it's better to continue or change the target
-- **@sash-ko** (2022-04-18): Thank you for the quick answer
-</details>
-
 ## #504 Terraform Docker Container Update
 **State:** CLOSED | **Author:** @slavarazum | **Created:** 2022-04-13 | **Updated:** 2024-08-09 | **Comments:** 9
 
@@ -690,21 +477,6 @@ Total: **244** issues
 - **@Amet13** (2022-04-14): >@Amet13 if I recall correctly you are the author of DO terraform, are you aware of any better way to update the app there?  For Digital Ocean it takes the latest code from master branch and...
 - **@slavarazum** (2022-04-14): @Amet13 Just made redeploy on DO, result: ``` 2022/04/14 17:19:06.816548 main.go:51: DB1000n [Version: v0.0.1][PID=42] ```  On Vultr autoupdates works fine 👍
 - **@Amet13** (2022-04-14): It's still the latest version, as DO automatically builds a binary and not getting it from github, that's why it shows you v0.0.1
-</details>
-
-## #503 What's the best way to keep the script running on the remote server?
-**State:** CLOSED | **Author:** @iblessedi | **Created:** 2022-04-12 | **Updated:** 2022-04-17 | **Comments:** 2
-
-> I have a VPS server and I run the script there. However for some reason after some time of running the script stops working with the error message
-> 2022/04/11 19:22:47.306448 main.go:137: Terminating
-> 
-> I use the Ubuntu server and run the script with the command
-> `nohup ./db100n > log.log...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-04-13): it depends on your goals and skill. The easiest way would probably be to wrap it in a loop like this https://www.cyberciti.biz/faq/bash-infinite-loop/  more complex approach would use something...
-- **@iblessedi** (2022-04-17): Ok, so here is my script, maybe will be useful for somebody: 1. Create a file called run.sh 2. Add there the following script:  ``` #!/bin/bash NUMBER_OF_PROCESSES=$(ps aux | grep db1000n |...
 </details>
 
 ## #501 Scale up automatically based on available file descriptors
@@ -904,20 +676,6 @@ Total: **244** issues
 - **@PerchunPak** (2022-04-05): Working, thanks
 </details>
 
-## #486 Telegram Channel Coordination
-**State:** CLOSED | **Author:** @app/ | **Created:** 2022-04-04 | **Updated:** 2022-04-04 | **Comments:** 2
-
-> I'm thinking about central coordination based on telegram channels. Like IRC-channels were used for DDoS coordination earlier.
-> For instance, I  trust this channel https://t.me/itarmyofukraine2022, they don't have some machine-readable format but probably we can ask moderator to do that. 
-> 
-> Any...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-04-04): The targets are already controlled by their admins ;)
-- **@** (2022-04-04): > The targets are already controlled by their admins ;)  @Arriven , Is there a compatible with db1000n json list of targets?
-</details>
-
 ## #485 Android Application
 **State:** OPEN | **Author:** @app/ | **Created:** 2022-04-04 | **Updated:** 2022-05-31 | **Comments:** 14
 
@@ -953,24 +711,6 @@ Total: **244** issues
 - **@oherych** (2022-04-02): Can you please provide some examples?
 - **@arriven** (2022-04-03): You can find some utility jobs in `src/job/util.go` and use them as a reference
 - **@arriven** (2022-04-04): fixed by https://github.com/Arriven/db1000n/commit/ccecdf8e628af2e35b1c50987c43b19a90cb5c8e
-</details>
-
-## #481 introduce utility job wrapper to eat the error of a wrapped job `[enhancement, priority: low]`
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-04-02 | **Updated:** 2022-04-04 | **Comments:** 1
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-04-04): fied by https://github.com/Arriven/db1000n/commit/a5190cae7be8225abe4a961dee0899136ee0d547
-</details>
-
-## #480 replace rawnet jobs with packetgen
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-04-02 | **Updated:** 2022-04-04 | **Comments:** 1
-
-> as of 0.8.15 (or 0.8.14, not sure) packetgen fully covers the functionality of rawnet jobs. Need to change them to just spawn a packetgen job with proper params for backward compatibility
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-04-04): fixed in https://github.com/Arriven/db1000n/commit/2c15d5f06f0facfe38b0af4ef5ebafa5f55b6f38
 </details>
 
 ## #475 Proxy not work for Windows
@@ -1038,50 +778,6 @@ Total: **244** issues
 > - [x] #470
 > - [ ] #471
 
-## #464 can't connect to container
-**State:** CLOSED | **Author:** @industral | **Created:** 2022-03-30 | **Updated:** 2022-03-30 | **Comments:** 4
-
-> ```
-> root@xxx:~# docker exec -it root_db100_proxy_15_1 /bin/sh
-> OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "/bin/sh": stat /bin/sh: no such file or directory: unknown
-> root@xxx:~# docker exec -it root_db100_proxy_15_1 sh
-> OCI runtime exec...
-
-<details><summary>Comments (4)</summary>
-
-- **@bitshape** (2022-03-30): Starting from v0.8.4 it’s using `ko` “distro-less” Docker builds so you can’t get into interactive mode as there’s no `bin/sh` anymore.
-- **@industral** (2022-03-30): thanks for reply! so how to check let's say if container has internet or to do something else?
-- **@arriven** (2022-03-30): you can, however, use db1000n-advanced for that, which is still based on alpine
-- **@industral** (2022-03-30): thanks @Arriven !
-</details>
-
-## #463 C/C++ port
-**State:** CLOSED | **Author:** @oxbee | **Created:** 2022-03-30 | **Updated:** 2022-03-30 | **Comments:** 2
-
-> Let's say I have shell (SSH) access to device which would like to execute db1000n. But unfortunately nor docker or GO is available there.
-> Thus, I would like to port db1000n into platform dependent executable via gcc / g++ compilation.
-> Since i'm only C/C++ developer and know nothing about GO, i...
-
-<details><summary>Comments (2)</summary>
-
-- **@oxbee** (2022-03-30): Ok, after checking documentation I've found this magnificent  [link](https://github.com/Arriven/db1000n/releases/latest)
-- **@arriven** (2022-03-30): I wish I could see your reaction when you find shell install script I crafted specifically for that case :) https://github.com/Arriven/db1000n/blob/main/docs/advanced-docs/advanced-and-devs.md
-</details>
-
-## #461 Is Seagull able to improve Your tool?
-**State:** CLOSED | **Author:** @bw-development | **Created:** 2022-03-30 | **Updated:** 2022-03-31 | **Comments:** 1
-
-> ## Expected Behavior
-> Generate traffics that difficult to effectively block/recognize by gate fw/ids systems of target
-> 
-> About Seagull
-> http://gull.sourceforge.net/index.html
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-30): I don't think I would be able to import it directly (using CGO would make it pain in the ass to support different platforms) but based on my initial overview of it I feel like my packetgen package...
-</details>
-
 ## #457 After upgrade generated load is very very low
 **State:** CLOSED | **Author:** @barnyiv | **Created:** 2022-03-29 | **Updated:** 2022-03-30 | **Comments:** 7
 
@@ -1113,21 +809,6 @@ Total: **244** issues
 - **@arriven** (2022-03-30): Seems like current default targets changed their IP addresses and started using qrator, in this case scaling the app won't really help until we switch targets
 </details>
 
-## #455 Please compile for FreeBSD 13.0-RELEASE amd64
-**State:** CLOSED | **Author:** @bw-development | **Created:** 2022-03-29 | **Updated:** 2022-03-30 | **Comments:** 3
-
-> There are a lot of FreeBSD users here in US, who glad to help Ukraine.
-> (And many of them are students and hardware technicians, so old machines also may be used. Not to forget about i386 platform ;)
-> 
-> Thank You and good luck!
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-03-29): Added freebsd and bunch of other OS types (everything that compiled successfully) in 0.8.13, but can't guarantee it would work flawlessly as not enough testing was done
-- **@bw-development** (2022-03-29): > Added freebsd and bunch of other OS types (everything that compiled successfully) in 0.8.1  Thank You so much! So, no any warnings during compilation?   > but can't guarantee it would work...
-- **@arriven** (2022-03-30): Well, there's almost no OS-specific code there (I can inly recall auto update which is not a core feature) so as long as libraries support that OS there shouldn't be any problems. You could get...
-</details>
-
 ## #454 Windows version doesn't start for me
 **State:** CLOSED | **Author:** @yetamzd | **Created:** 2022-03-28 | **Updated:** 2022-03-29 | **Comments:** 8
 
@@ -1145,18 +826,6 @@ Total: **244** issues
 - **@yetamzd** (2022-03-29): Thank you for help! Works perfectly!
 </details>
 
-## #450 Docker compose UPDATER_MODE type problem
-**State:** CLOSED | **Author:** @andser | **Created:** 2022-03-27 | **Updated:** 2022-03-28 | **Comments:** 0
-
-> ## Expected Behavior
-> Should successfully run containers
-> 
-> ## Actual Behavior
-> `
-> $ docker-compose -f examples/docker/static-docker-compose.yml up
-> ERROR: The Compose file './examples/docker/static-docker-compose.yml' is invalid because:
-> services.updater.environment.UPDATER_MODE contains true,...
-
 ## #448 Introduce exponential backoff to some jobs `[enhancement, help wanted, priority: high]`
 **State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-27 | **Updated:** 2022-03-27 | **Comments:** 1
 
@@ -1165,58 +834,6 @@ Total: **244** issues
 <details><summary>Comments (1)</summary>
 
 - **@arriven** (2022-03-27): I'll only be able to properly work on it myself tomorrow so if someone wants to jump in - feel free to do so
-</details>
-
-## #447 Руський — це не правильно
-**State:** CLOSED | **Author:** @adronstar | **Created:** 2022-03-27 | **Updated:** 2022-03-30 | **Comments:** 2
-
-> Руський — це не правильно, бо Руський походить від слова Русь, тобто це історично — древня Україна, до чого росія не має жодного відношення.
-> 
-> Краще використовувати слово "русский", або "російський", чи "московитський" 
-> 
-> **Русский воєнний корабль іди нахуй!** 
-> **Слава Україні!**
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-27): Already fixed in latest release AFAIR
-- **@arriven** (2022-03-27): Even better - it's fixed starting from v0.8.8
-</details>
-
-## #444 Service "updater" is missing a healthcheck configuration
-**State:** CLOSED | **Author:** @industral | **Created:** 2022-03-27 | **Updated:** 2022-03-29 | **Comments:** 3
-
-> running docker-compose get the following issue
-> 
-> ```
-> ERROR: for db1000n_38  Service "updater" is missing a healthcheck configuration
-> 
-> ERROR: for db1000n_31  Service "updater" is missing a healthcheck configuration
-> 
-> ERROR: for db1000n_03  Service "updater" is missing a healthcheck...
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-03-27): @bitshape seems like "service_started" condition also requires a healthcheck to be defined. I suggest we just enable pprof endpoint on it and use that endpoint/port availability as a healthcheck? Not...
-- **@bitshape** (2022-03-27): @Arriven @industral No, it definitely doesn't need health check to be define for `service_started`: https://docs.docker.com/compose/compose-file/compose-file-v2/#depends_on  > In the above example,...
-- **@industral** (2022-03-29): fixed in master code
-</details>
-
-## #443 Problem in v.0.8.9
-**State:** CLOSED | **Author:** @mrdrebot | **Created:** 2022-03-27 | **Updated:** 2022-03-27 | **Comments:** 4
-
-> ## Expected Behavior
-> Turn on VPN and start file db1000n.exe, all should work.
-> 
-> ## Actual Behavior
-> I use VPN in Chrome - Browsec VPN - Free VPN for Chrome and it work. I got new window with the list of th VPNs. In v.0.8.8 all worked good with this VPN and I didn`t get any window. If I stated...
-
-<details><summary>Comments (4)</summary>
-
-- **@Geniy00** (2022-03-27): I think that chrome extension doesn't mean that other apps on your PC use VPN. You need to run special VPN program for Windows, then db1000n will really use VPN
-- **@arriven** (2022-03-27): There shouldn't be any significant difference between 0.8.8 and 0.8.9 so I'm almost completely sure the problem is related to the vpn setup itself but I'll take another look
-- **@mrdrebot** (2022-03-27): Hello again!  When I use Browsec VPN - Free VPN for Chrome (see picture_1) my ip doesn`t changes for your program but your program write that all Ok and attack work and config download, see...
-- **@mrdrebot** (2022-03-27): Hello!  Ignor my letter, you repaired all in new version.  27 березня 2022, 16:07:30, від "Maxim Drebot" ***@***.***>:  Hello again!  When I use Browsec VPN - Free VPN for Chrome (see...
 </details>
 
 ## #439 Updater dont work in docker-compose
@@ -1248,28 +865,6 @@ Total: **244** issues
 - **@bitshape** (2022-03-26): Part 2 of the fix: https://github.com/Arriven/db1000n/pull/442  1) If you're using health check for Docker containers, this is no longer is going to work 2) Volume mount path needs to be changed...
 </details>
 
-## #438 Download links in docs are broken
-**State:** CLOSED | **Author:** @qyurila | **Created:** 2022-03-26 | **Updated:** 2022-03-27 | **Comments:** 3
-
-> ## Expected Behavior
-> 
-> The download links work properly.
-> 
-> ## Actual Behavoir
-> 
-> The download links lead you to Not Found page.
-> 
-> ## Additional Information
-> 
-> Since 854f943f1964376dea4c0873fd8e10a781d663be commited, the filename scheme of released files have changed so that their version fields...
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-03-26): Oops, forgot about that one, will fix shortly
-- **@arriven** (2022-03-26): Should be fixed now
-- **@qyurila** (2022-03-27): Thank you!
-</details>
-
 ## #435 Error while fetching config
 **State:** OPEN | **Author:** @tvoretsmira | **Created:** 2022-03-26 | **Updated:** 2023-03-16 | **Comments:** 14
 
@@ -1297,64 +892,6 @@ Total: **244** issues
 - **@arriven** (2022-03-28): yes, in terms of effectiveness I'd put them in the following order: 1. VPN into "friendly" country 2. VPN into any country other than Ukraine 3. "Friendly" Proxies 4. Any non-Ukrainian...
 - **@hobbsit** (2022-03-30): The problem for me was an overly persistent ovpn tunnel interface that would not refresh. Steps I took:  - Removing this tun interface: openvpn --rmtun --dev $tunX - Resetting VPN to the most...
 - **@vadyochik** (2023-03-16): there is also a problem with outdated config - when the first github's url has failed for some reason, the other 2 bitbucket's ones are not actual. The one doesn't exist any more (404 error) and the...
-</details>
-
-## #434 App crashed on some azure linux vw
-**State:** CLOSED | **Author:** @dberezhnenko | **Created:** 2022-03-26 | **Updated:** 2022-03-26 | **Comments:** 2
-
-> When i run application with default config it halt after some target with output "Killed"
-> -debug option doesnt show anything.
-> 
-> Last attacked target could be different on several runs in row.
-> Problem repeated at several WM without any logic. Just today I stopped one process (which worked all...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-26): Most likely it's being killed due to OOM, you can try disabling Prometheus and encryption to decrease memory usage and leave only essential functionality. There's been an instruction in one of the...
-- **@dberezhnenko** (2022-03-26): it seems your advice helpped.  With options -prometheus_on=false -skip-encrypted=true app is working!
-</details>
-
-## #433 There is no any status indication in the Console output whether an attack is successful or not
-**State:** CLOSED | **Author:** @oleg-bronzhaiev | **Created:** 2022-03-26 | **Updated:** 2022-03-26 | **Comments:** 1
-
-> ## Expected Behavior
-> **There is** some status indication in the Console output whether an attack is successful or not.
-> At least, this could be fixed to the indication as it was in the prev version db1000n-**v0.8.2**-windows-amd64:
-> "Атака проводиться успішно! Руський воєнний корабль іди...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-26): Fixed in #436
-</details>
-
-## #432 Traffic stats are not displayed
-**State:** CLOSED | **Author:** @sq2mo | **Created:** 2022-03-26 | **Updated:** 2022-03-26 | **Comments:** 3
-
-> ## Expected Behavior
-> 
-> "Traffic stats" banner displayed periodically.
-> 
-> ## Actual Behavior
-> 
-> "Traffic stats" banner not displayed.
-> The only visible logs are:
-> config.go:63: Loading config from...
-
-<details><summary>Comments (3)</summary>
-
-- **@tvoretsmira** (2022-03-26): The same behavior is observed for Windows 7 x64.
-- **@arriven** (2022-03-26): Fixed in #436 The issue was there from the very beginning but only manifested now due to issues with Google analytics backend, we've changed the code to output logs regardless of that
-- **@sq2mo** (2022-03-26): Just tested and v0.8.9 works ok, closing.
-</details>
-
-## #427 Russian warship
-**State:** CLOSED | **Author:** @stiltjack | **Created:** 2022-03-25 | **Updated:** 2022-03-25 | **Comments:** 1
-
-> Any chance of getting rid of the "go fuck yourself"? It was funny the first time, less so the 500th time. How will people take you seriously?
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-25): yes, but after the war ends. Right now I consider that message to be more of a tribute rather than just something funny (google the origin if you want)
 </details>
 
 ## #424 Підтримка проксі
@@ -1390,28 +927,6 @@ Total: **244** issues
 - **@arriven** (2022-03-30): Context deadline exceeded usually means that it has timed out while fetching url. Can you check if the pod has access to the internet?
 - **@localdotcom** (2022-03-30): @Arriven  I've tested it again with 1 pod replica, the error is gone. Before I ran 15 pods with scale_factor=25. But I'm not sure if it's related to amount of pods.
 - **@arriven** (2022-03-30): if I were to guess I'd put my money on scale factor rather than the amount of pods. could be that the amount of connections used by the app exceeds the configured limit of file descriptors allowed...
-</details>
-
-## #423 Is checksum file correct since the last update about at 13h30 CET ?
-**State:** CLOSED | **Author:** @ykerb2 | **Created:** 2022-03-25 | **Updated:** 2022-03-25 | **Comments:** 3
-
-> Did i do wrong with my md5sum program ?
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-03-25): as of v0.8.4 the correct way to validate checksum is with `sha256sum` (or `shasum -a 256` on darwin)
-- **@arriven** (2022-03-25): see install.sh for more details
-- **@ykerb2** (2022-03-25): tks
-</details>
-
-## #422 Incorrect zipping for Window platform
-**State:** CLOSED | **Author:** @art-c0der | **Created:** 2022-03-25 | **Updated:** 2022-03-25 | **Comments:** 1
-
-> <img width="882" alt="Screen Shot 2022-03-25 at 12 23 30" src="https://user-images.githubusercontent.com/42999342/160112305-241e2b21-b828-44e5-82a1-b88de62a6e10.png">
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-25): fixing (should be ok since 0.8.6 which is being built now)
 </details>
 
 ## #421 Change cloud guides and deployments to use regular image with ENABLE_PRIMITIVE=false `[documentation, help wanted, good first issue, priority: medium]`
@@ -1491,18 +1006,6 @@ Total: **244** issues
 - **@stalkerdp500m** (2022-03-25): > should be fixed now Thanks. work
 </details>
 
-## #413 DigitalOcean best app country/region select
-**State:** CLOSED | **Author:** @asjustis | **Created:** 2022-03-24 | **Updated:** 2022-03-25 | **Comments:** 1
-
-> Just launched db1000n instance on DigitalOcean. Attacks are logged as successful, but the response rate is simply 0.0%, so I am not sure it actually reaches the targets correctly. 
-> 
-> Thinking to switch it to another region, to a country that russia might have not restricted internet access yet....
-
-<details><summary>Comments (1)</summary>
-
-- **@asjustis** (2022-03-25): Ah, yes, I changed to Singapore (sgp) region, and now I have `[ Response rate ] 86.8%` instead of 0.1%. Maybe that helps somebody. Closing :)
-</details>
-
 ## #412 Incorrect traffic stats calculation
 **State:** CLOSED | **Author:** @asu-talk | **Created:** 2022-03-24 | **Updated:** 2022-03-24 | **Comments:** 7
 
@@ -1545,18 +1048,6 @@ Total: **244** issues
 - **@arriven** (2022-03-31): Enabled github discussions for community help
 </details>
 
-## #409 Is adv config still relevant?
-**State:** CLOSED | **Author:** @kurlyk-dev | **Created:** 2022-03-24 | **Updated:** 2022-03-24 | **Comments:** 1
-
-> Is [adv config](https://raw.githubusercontent.com/db1000n-coordinators/LoadTestConfig/main/config.adv.json) still relevant?
-> It hasn't been updated for 4 days, maybe I should switch to the common config?
-> But I'am running a big fleet of instances on AWS, maybe it's risky, my previous account was...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-24): Hey, advanced config is no longer relevant as since v0.8.0 the app has a filter to disable non-advanced jobs (it's not present in default config yet because we don't use jobs that are affected)
-</details>
-
 ## #408 Full CPU use, errors in the debug output
 **State:** CLOSED | **Author:** @sq2mo | **Created:** 2022-03-24 | **Updated:** 2022-03-25 | **Comments:** 10
 
@@ -1582,95 +1073,6 @@ Total: **244** issues
 - **@sq2mo** (2022-03-25): Ok, could not replicate this problem on a newest 0.8.7. Going to production.
 </details>
 
-## #401 Failed to unmarshal job configs, will keep the current one: invalid character '}' looking for beginning of object key string
-**State:** CLOSED | **Author:** @JeyM1 | **Created:** 2022-03-23 | **Updated:** 2022-03-23 | **Comments:** 6
-
-> Full log:
-> ```
-> 2022/03/23 17:51:27.029769 main.go:58: DB1000n [Version: v0.7.12][PID=442416]
-> 2022/03/23 17:51:27.030119 countrychecker.go:28: Checking IP address, attempt #0
-> 2022/03/23 17:51:28.250122 countrychecker.go:97: Current country: Germany (138.68.81.60)
-> 2022/03/23 17:51:28.349953...
-
-<details><summary>Comments (6)</summary>
-
-- **@DangelZM** (2022-03-23): Same issue for  >  > System Version: macOS 11.6 (20G165) > Kernel Version: Darwin 20.6.0
-- **@ahalan** (2022-03-23): Same on Apple silicon M1 > System Version: macOS 12.0.1 (21A559) > Kernel Version: Darwin 21.1.0  ``` 2022/03/23 18:05:33.733442 config.go:40: Loading config from...
-- **@oholubovskyi** (2022-03-23): Looks like its old version (v0.7.12).  Try the latest version https://github.com/Arriven/db1000n/releases/tag/v0.8.2
-- **@oholubovskyi** (2022-03-23): > The issue reason is incorrect configuration json - redundant commas. While the issue is not fixed by the channel administrators we can (as a workaround): >  > 1. download configuration json...
-- **@asu-talk** (2022-03-23): > > The issue reason is incorrect configuration json - redundant commas. While the issue is not fixed by the channel administrators we can (as a workaround): > >  > > 1. download configuration json...
-- **@JeyM1** (2022-03-23): On newest version all is fine, thanks
-</details>
-
-## #399 Encrypted jobs and Prometheus stats
-**State:** CLOSED | **Author:** @bitshape | **Created:** 2022-03-23 | **Updated:** 2022-03-23 | **Comments:** 1
-
-> Assuming https://github.com/Arriven/db1000n/commit/620ba375b1ba5c13e439c0dfb88f3e2d0a3868b3 was removed so that wouldn't be possible to inspect encrypted config by polling from Prometheus server, this still leaves a possibility of indirectly observing encrypted config by setting up own Prometheus...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-23): the thing is that we can't secure everything and it's just a question of slowing down those who want to get access to the encrypted config. You need to set up your own prometheus cluster in order to...
-</details>
-
-## #396 How to understand if tcp-targets are under attack or not?
-**State:** CLOSED | **Author:** @UnitybaseExplorer | **Created:** 2022-03-22 | **Updated:** 2022-03-22 | **Comments:** 3
-
-> Is there a way to see if tcp-targets are under attack or not? They are not logged in the output.
-> 
-> Custom config:
-> ```
-> {
-> "jobs": [
-> {
-> "type": "http",
-> "count": 10,
-> "args": {
-> "request": {
-> "method": "GET",
-> "path": "https://dolyami.com/"
-> }
-> }
-> },
-> {
-> "type": "tcp",
-> "args": {
-> "address":...
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-03-22): @UnitybaseExplorer I'm currently working on improving the visibility there (the logs are already in main, tracking is incoming but github is experiencing issues so I'm waiting on CI to pass before...
-- **@arriven** (2022-03-22): logs were added here https://github.com/Arriven/db1000n/commit/66b3c596749198fd96fe04ebfe8b8f73a5e86a65
-- **@UnitybaseExplorer** (2022-03-22): Thx!!!
-</details>
-
-## #394 Why encrypted jobs?
-**State:** CLOSED | **Author:** @Fahrenheit2539 | **Created:** 2022-03-22 | **Updated:** 2022-03-23 | **Comments:** 4
-
-> One of the jobs in the config is encrypted.
-> 
-> `    {
->       "type": "encrypted",
->       "args": {
->         "format": "json",
->         "data": 
-> ...`
-> 
-> Base64 decoding shown following header:
-> `
-> age-encryption.org/v1
-> -> scrypt yKFNmP9oNK38ps7grEA12A 18
-> `
-> 
-> I'm curious why? That does not help...
-
-<details><summary>Comments (4)</summary>
-
-- **@arriven** (2022-03-22): @Fahrenheit2539 you have an option to skip those jobs completely via `--skip-encrypted` commandline flags (see...
-- **@Fahrenheit2539** (2022-03-22): Thanks, really appreciate quick response! Your arguments make sense, don't think you want to add more bureaucracy in this fast-moving process.  What would help is updating docs to briefly mention...
-- **@arriven** (2022-03-22): I don't think that it would require a lot of bureaucracy, especially on my side. I would most likely delegate the trust establishment to someone else (whom I already trust).  And it would be...
-- **@Fahrenheit2539** (2022-03-23): Can send me an email to fahrenheit2539 at hotmail.com? Interested to discuss how can I help.
-</details>
-
 ## #392 OOM on hardware with low RAM
 **State:** CLOSED | **Author:** @avoylenko | **Created:** 2022-03-22 | **Updated:** 2022-03-22 | **Comments:** 4
 
@@ -1687,48 +1089,6 @@ Total: **244** issues
 - **@avoylenko** (2022-03-22): @Arriven  It seems like the command line option `--prometheus_on=false` does not work as expected:  ``` root@raspberrypi:~# ./db1000n --prometheus_on=false 2022/03/22 10:59:49.305912 main.go:57:...
 - **@arriven** (2022-03-22): Ah, yes, I didn't kickoff the release yet, will do it once the air hazard alarm ends 😅
 - **@avoylenko** (2022-03-22): @Arriven '-prometheus_on=false' option help me to run the service with 512 mb RAM. Thank you for you valuable work.
-</details>
-
-## #390 Add http server listening port 8080 as parralel process in the App for Google Cloud Run compability
-**State:** CLOSED | **Author:** @ubexplorer | **Created:** 2022-03-21 | **Updated:** 2022-03-26 | **Comments:** 2
-
-> I've deployed docker containers with db1000n on GCP Cloud Run, which serves ingress traffic preferably and bills ingress requests as well, therefore GCP trial account with Cloud Run consumes ~ 1USD/day per 10 containers.
-> But to deploy container in GCP Cloud Run I had to rebuild image with db1000n...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-21): You can probably already utilize --pprof flag for that unless cloud run requires some specific API to be present
-- **@sivillakonski** (2022-03-22): Hi @SerhiiZavalko, turning the `-enable-self-update` within the container won't work because it downloads and shuts down the current process in order to start a new process from a newer binary. The...
-</details>
-
-## #389 Proxy support
-**State:** CLOSED | **Author:** @human1ty | **Created:** 2022-03-21 | **Updated:** 2022-03-24 | **Comments:** 2
-
-> Is it possible to feed the proxy list either via a direct link or a local text file as an argument to a tool
-> The intention is to apply a randomly selected proxy during the attack
-> As a proposal - do a test for some N number of proxies in order to
-> 1) Find out whether the proxy usable
-> 2) Find out...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-21): It's not implemented as a full blown feature but it's possible to achieve something of the following already by utilizing `--proxy` commandline flag. Accepts a comma separated list of proxies but...
-- **@arriven** (2022-03-21): I'm not sure implementing full proxy rotation solution inside the app would be viable though, could be easier to setup a separate solution that would control proxies and just feed the list to db1000n
-</details>
-
-## #387 Something weird is going on, contact admins
-**State:** CLOSED | **Author:** @MetaMmodern | **Created:** 2022-03-21 | **Updated:** 2022-03-21 | **Comments:** 1
-
-> ![image](https://user-images.githubusercontent.com/42899786/159252632-cd9ca524-85d6-4529-ad5f-6005fca1466f.png)
-> Started db1000n using tmux:
-> 
-> `tmux new -d "db1000n -enable-self-update"`
-> 
-> @Arriven What's wrong here? Worked fine until 10AM or so
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-21): the config has changed to include only tcp targets, see #386
 </details>
 
 ## #386 ver 0.7.12 & ver.0.8.0
@@ -1752,30 +1112,6 @@ Total: **244** issues
 - **@arriven** (2022-03-24): Closing this as #12 was already fixed
 </details>
 
-## #382 Load amount configuration
-**State:** CLOSED | **Author:** @mErlin-sp | **Created:** 2022-03-21 | **Updated:** 2022-03-24 | **Comments:** 2
-
-> Hello. I`ve looking into your project and it seems pretty good but i need to run up to 10 docker containers to utilize full of my cpu. Do we have a possibility to configurate amount of load (threads count, for example) in this software?
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-21): you can use `--scale 10` to achieve that same result
-- **@arriven** (2022-03-21): no automatic cpu load detection for now (probably wouldn't be as good anyway since a lot of use cases are limited by network performance or amount of unique IP addresses you can get)
-</details>
-
-## #379 Prometheus charts
-**State:** CLOSED | **Author:** @dzhonzojdberg | **Created:** 2022-03-20 | **Updated:** 2022-03-30 | **Comments:** 4
-
-> Please make guest access to Prometheus charts.
-
-<details><summary>Comments (4)</summary>
-
-- **@Lagovas** (2022-03-23): for what you need it?  looking on such random nickname It looks strange. Personally, I prefer to close such issues from bots with strange requests)
-- **@dzhonzojdberg** (2022-03-24): > for what you need it? looking on such random nickname It looks strange. Personally, I prefer to close such issues from bots with strange requests)  Hi, not a bot, a real person, actively using...
-- **@arriven** (2022-03-26): @dzhonzojdberg you can use Prometheus endpoint if you use unencrypted build (i.e. you build the app from source) it's available at ":9090/metrics" when `--prometheus_on` is set to true (it's set to...
-- **@dzhonzojdberg** (2022-03-29): @Arriven Thanks! That what I needed!)
-</details>
-
 ## #377 please add to the guide that for some locations in aws config main instance type need to be changed from t2.micro to t3.micro `[documentation, help wanted]`
 **State:** CLOSED | **Author:** @DTBLA | **Created:** 2022-03-19 | **Updated:** 2022-04-01 | **Comments:** 3
 
@@ -1786,17 +1122,6 @@ Total: **244** issues
 - **@arriven** (2022-03-19): Probably would be best if you go ahead and make a PR yourself since as I understand it's not all regions that need this
 - **@alexdanger** (2022-03-23): i suggest to add also graviton instances, as they have lowest prices and better cpu/mem throughput.
 - **@Amet13** (2022-03-31): I believe it's already covered by https://github.com/Arriven/db1000n/pull/403/files#diff-e0beaf635e7e58ca4243047eed9acca64a5426826fb4c19579c3fef5c6cc6cc2R22
-</details>
-
-## #376 Built-in DDoS protection bypass
-**State:** CLOSED | **Author:** @localdotcom | **Created:** 2022-03-19 | **Updated:** 2022-03-31 | **Comments:** 2
-
-> Hi guys, does db1000n have built-in options to bypass DDoS protections like DDoS Guard, Cloudflare DDoS protection etc.?
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-19): It's not built in but it is already configurable enough to bypass some ddos-guard configurations and I'm working on functionality that would allow bypassing cloudflare and similar services
-- **@arriven** (2022-03-31): CLosing this in favor of #293
 </details>
 
 ## #371 Add ipv6 support to packetgen `[enhancement, priority: high]`
@@ -1933,19 +1258,6 @@ Total: **244** issues
 - **@arriven** (2022-03-30): fixed in 0.8.14, see [comment](https://github.com/Arriven/db1000n/issues/424#issuecomment-1082907673) for some additional notes
 </details>
 
-## #348 prometheus.go:273: Can't push metrics to gateway, trying to change gateway...?
-**State:** CLOSED | **Author:** @SamvSeer | **Created:** 2022-03-15 | **Updated:** 2022-03-15 | **Comments:** 2
-
-> output while running job db1000n:
-> 
-> prometheus.go:273: Can't push metrics to gateway, trying to change gateway
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-15): we've enabled metrics to be able to see how much traffic we generate and be able to adapt our strategy accordingly. this message just means that we can't see the traffic you generate (so we're...
-- **@SamvSeer** (2022-03-15): thanks for the feedback. will close the issue..btw running the job with VPN..currently from France.....same message occurs
-</details>
-
 ## #347 Version 0.7.9 crashing on Windows10: need to fix `[bug, priority: high]`
 **State:** CLOSED | **Author:** @crocangIt | **Created:** 2022-03-15 | **Updated:** 2022-03-15 | **Comments:** 9
 
@@ -2002,18 +1314,6 @@ Total: **244** issues
 - **@Lagovas** (2022-03-17): > It's not possible to compile db1000n binary or Docker container from fork (decryption error due to missing key)  you can use your own key in your own fork. read [how it...
 - **@Lagovas** (2022-03-17): > and therefore, my suggestion of implementing simple clear signature won't ever be merged  and what the goal of signing? all configuration sources under control of the author of binaries and...
 - **@neatdecisions** (2022-03-17): > As I know about last fixes (#354), it should works well with 1GB too.  Yes, I confirm, this PR has fixed the high memory peak issues.
-</details>
-
-## #341 Feature request: "-use-advanced-config" flag for binary distribution
-**State:** CLOSED | **Author:** @dmitry-salnikov | **Created:** 2022-03-14 | **Updated:** 2022-03-19 | **Comments:** 1
-
-> Since you've added self-update for binary distribution - thanks! - could you please add the CLI option to use advanced config - same as used by docker image `ghcr.io/arriven/db1000n-advanced` mentioned in the docs.
-> 
-> It's preferrable to add kind of `-use-advanced-config` flag instead of specifying...
-
-<details><summary>Comments (1)</summary>
-
-- **@sivillakonski** (2022-03-15): Hi folks, thank you for your feedback! Lemme see what we can do with this :)
 </details>
 
 ## #340 Create Terraform deployment for Amazon Elastic Container Service (ECS)
@@ -2097,21 +1397,6 @@ Total: **244** issues
 - **@AdamMickiewich** (2022-08-15): Here is a .deb package with systemd service https://github.com/VolyaTeam/dzida-service. Can be easily extended for RPM as well. `db1000n` is not included into a package for a few reasons: - The up...
 </details>
 
-## #327 Not sure this is an issue: Received HTTP 304 not modified..version 0.7.4
-**State:** CLOSED | **Author:** @SamvSeer | **Created:** 2022-03-13 | **Updated:** 2022-03-13 | **Comments:** 4
-
-> error message while running: Received HTTP 304 not modified..version 0.7.4...darwin arm64
-> 
-> <img width="535" alt="Schermafbeelding 2022-03-13 om 16 59 07" src="https://user-images.githubusercontent.com/25307892/158068473-8625f693-ec4a-40af-b5eb-0075ae9d155a.png">
-
-<details><summary>Comments (4)</summary>
-
-- **@arfgdev** (2022-03-13): could you describe the way to reproduce it?
-- **@ChangeMe83** (2022-03-13): The same issue `2022/03/13 19:44:51.195001 config.go:103: Received HTTP 304 Not Modified 2022/03/13 19:44:51.195023 config.go:59: Loading config from...
-- **@arfgdev** (2022-03-13): it is not an error.  it is an expected behavior https://github.com/Arriven/db1000n/blob/v0.7.4/src/runner/config/config.go#L103
-- **@SamvSeer** (2022-03-13): ok..will close it. Just reported it because this message was not there in earlier versions.
-</details>
-
 ## #322 v0.7.0 says  DB1000n [Version: v0.0.1]
 **State:** CLOSED | **Author:** @su-hs | **Created:** 2022-03-13 | **Updated:** 2022-03-14 | **Comments:** 5
 
@@ -2128,28 +1413,6 @@ Total: **244** issues
 - **@su-hs** (2022-03-13): I do confirm - FIXED in `v0.7.4`.
 - **@su-hs** (2022-03-13): @Arriven hope u will get notif from closed issue, but, look,  ``` docker run --pull always ghcr.io/arriven/db1000n:latest # or this way docker run --rm -it --pull always...
 - **@su-hs** (2022-03-14): @Arriven I do confirm, that latest `v0.7.5` is ALSO OK in regards to described issue:   ``` $ docker run --rm -it --pull always **ghcr.io/arriven/db1000n:latest**  latest: Pulling from...
-</details>
-
-## #318 Absolute path treated as a url when fetching config
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-13 | **Updated:** 2022-03-13 | **Comments:** 0
-
-> Ok, I think as a workaround for fetching config I should try to download it manualy with disabled vpn and then run db1000n container with overwritten entry point to specify path to the config.
-> 
-> ```
-> vpn disconnect
-> docker stop $(docker ps -a -q)
-> docker pull...
-
-## #315 Docker container can't send packets
-**State:** CLOSED | **Author:** @dobrik | **Created:** 2022-03-12 | **Updated:** 2022-03-13 | **Comments:** 1
-
-> I use docker to attack on two different PCs. 
-> First is on windows OS with wsl (Ubuntu), on this configuration everything looks good, addesses changes, lines appear.
-> Also I have Linux installed PC (Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-144-generic x86_64)) and on it I have an issue, process freezes...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-13): It looks like the image you are using is quite old, this bug was fixed around a week ago (also it affects only one of the attacks with <1% chance) Try running docker with `--pull always`
 </details>
 
 ## #313 OpenVPN can't connect: Exiting due to fatal error
@@ -2171,45 +1434,6 @@ Total: **244** issues
 <details><summary>Comments (1)</summary>
 
 - **@industral** (2022-03-12): Issue was due to wrong docker-compose config, using   ```yml     environment:       VPN_AUTH_SECRET: provider01_secret     secrets:       - provider02_secret ```  Strange OpenVPN error...
-</details>
-
-## #310 Broken download links in README file
-**State:** CLOSED | **Author:** @artempolikarpov | **Created:** 2022-03-12 | **Updated:** 2022-03-13 | **Comments:** 1
-
-> Unable to download due to broken tags in links (section Download an application for your platform)
-> > [Windows]([https://github.com/Arriven/db1000n/releases/download/{{](https://github.com/Arriven/db1000n/releases/download/%7B%7B) git_latest_version_tag }}/db1000n-{{ git_latest_version_tag...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-13): Fixed, forgot to update readme properly after switching to mkdocs. please use https://arriven.github.io/db1000n for all the docs related to this package
-</details>
-
-## #308 Azure - wrong (outdated) run command
-**State:** CLOSED | **Author:** @exsesx | **Created:** 2022-03-12 | **Updated:** 2022-03-12 | **Comments:** 0
-
-> Terraform Azure configuration is failing to start because of the wrong run command. Need to edit `attack_commands` variable in `terraform/azure/variables.tf`. 
-> 
-> https://github.com/Arriven/db1000n/blob/c4488e52315677f14ad7672dafa21d7d777213fb/terraform/azure/variables.tf#L13
-> 
-> Should...
-
-## #303 Docker container stop work on targets after one minute
-**State:** CLOSED | **Author:** @timsofteng | **Created:** 2022-03-12 | **Updated:** 2022-03-12 | **Comments:** 4
-
-> Here is some logs.
-> 
-> ```
-> 2022/03/12 08:25:06.012207 http.go:137: Attacking http://195.93.247.72:80
-> 2022/03/12 08:25:06.013129 http.go:137: Attacking http://195.93.247.72:80
-> 2022/03/12 08:25:06.014777 http.go:137: Attacking http://146.158.54.13:80
-> 2022/03/12 08:25:06.016153 http.go:137:...
-
-<details><summary>Comments (4)</summary>
-
-- **@arriven** (2022-03-12): What makes you think it has stopped working on targets though?
-- **@timsofteng** (2022-03-12): > What makes you think it has stopped working on targets though?  Log stops print targets.
-- **@arriven** (2022-03-12): We changed that some time ago to print targets only when the app starts attacking them. It may be less obvious to users but it makes it a lot easier to diagnose problems. You can see that the app...
-- **@timsofteng** (2022-03-12): > We changed that some time ago to print targets only when the app starts attacking them. It may be less obvious to users but it makes it a lot easier to diagnose problems. You can see that the app...
 </details>
 
 ## #300 db1000n container doesn't have connection but vpn container has
@@ -2240,29 +1464,6 @@ Total: **244** issues
 - **@industral** (2022-03-13): so far so me works now the following config:  ```yaml   db1000n_01:     image: ghcr.io/arriven/db1000n-advanced     restart: unless-stopped     depends_on:       ovpn_01:         condition:...
 </details>
 
-## #298 HTTP job refactoring
-**State:** CLOSED | **Author:** @bmirnoff | **Created:** 2022-03-11 | **Updated:** 2022-03-11 | **Comments:** 1
-
-> This is hard to modify code as it is really procedural and is not allowed to effectively contribute.
-> I am Providing PR with changes about it.
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-11): Fixed in #301
-</details>
-
-## #294 Network traffic limitation
-**State:** CLOSED | **Author:** @vovagorodok | **Created:** 2022-03-11 | **Updated:** 2022-03-31 | **Comments:** 3
-
-> There is any flag or config to limit network traffic? It's not possible to work at network from other PC when ddoser is turned on. Pages are not responsible. If it's possible to limit then will be nice to add this info to documentation. For me personally docker case is interesting one
-
-<details><summary>Comments (3)</summary>
-
-- **@bitshape** (2022-03-12): Make sure your PC is connected over Ethernet to your router if it isn't.  If you can setup Docker with VPN, it might be worth trying. VPN is unlikely to be as fast as your main connection so that's...
-- **@srhlv** (2022-03-13): You can limit cpu usage per docker container with "--cpus=0.1" param, this will therefore limit net usage as well. (0.1 means 10% of your total cpu capacity)
-- **@arriven** (2022-03-31): Apart from docker solution you can also use `--min-interval` to introduce artificial rate limiting to attacks (see --help for more details)
-</details>
-
 ## #293 CloudFlare bypass 
 **State:** OPEN | **Author:** @bmirnoff | **Created:** 2022-03-11 | **Updated:** 2022-03-20 | **Comments:** 7
 
@@ -2278,21 +1479,6 @@ Total: **244** issues
 - **@bmirnoff** (2022-03-13): Here is actually how Cloudfare response looks like https://github.com/Arriven/db1000n/pull/324
 - **@** (2022-03-14): Please, fix a TYPO in the tittle ClOudFlare
 - **@crocangIt** (2022-03-20): > Just for everybody's information, reference impl for CFB can be https://github.com/Anorov/cloudflare-scrape js challenge is forked via node.js vm. Need to investigate actual process of solving a...
-</details>
-
-## #292 IP address spoofing
-**State:** CLOSED | **Author:** @bmirnoff | **Created:** 2022-03-11 | **Updated:** 2022-03-31 | **Comments:** 1
-
-> I observed code and see that config allows templating for headers and requests. But what about to add default IP address spoofing solution that adds headers for each HTTP attack 
-> 
-> https://github.com/MHProDev/MHDDoS/blob/main/start.py#L566
-> `
-> ("X-Forwarded-Proto: Http\"
->                ...
-
-<details><summary>Comments (1)</summary>
-
-- **@sivillakonski** (2022-03-12): @bmirnoff, The problem here is that `X-Forwarded-*` headers are usually set by the load balancers. I can't be 100% confident, but it feels like these headers would be overwritten by the reverse proxy...
 </details>
 
 ## #287 700% CPU usage on MacOS - performance issue
@@ -2324,37 +1510,6 @@ Total: **244** issues
 - **@serg-music** (2022-03-27): ulimit -n 5000 solved the issue.  Not sure why the `file descriptors` is used. Probably the core generates the `file` that is somehow `read` during the sending request.
 - **@arriven** (2022-03-27): On unix network connection is done via sockets and socket is very similar to a regular file. That's also true for pipes in your shell. Another cool thing in that regard is that there is /proc...
 </details>
-
-## #282 Support proxy list (--proxylist-url not work properly)
-**State:** CLOSED | **Author:** @udjfvnsaoepna | **Created:** 2022-03-10 | **Updated:** 2022-03-13 | **Comments:** 0
-
-> You need to enable support for proxy and socks lists, with periodic updates
-> 
-> I tried using --proxylist-url
-> But this argument does not work properly, the program does not display any information on working with proxies
-> 
-> Proxy list must support different formats (without json, only text +...
-
-## #281 What's the status on "Slow Loris" method?
-**State:** CLOSED | **Author:** @SomalianCoolhacker | **Created:** 2022-03-10 | **Updated:** 2022-03-10 | **Comments:** 1
-
-> Hi, when looking through changes in the main branch, I've discovered that, quote,
-> 
-> > `Warning`: slow-loris from `testconfig.json` is not yet finished and may overload the app due to not handling config refreshes
-> 
-> But the `slowloris.go` script is being updated frequently, so I'm wondering if it...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-10): ah, right, forgot to remove that note, thanks for bringing it up!
-</details>
-
-## #280 Every time after 2Gb - doesn't seem to generate any traffic
-**State:** CLOSED | **Author:** @Aljnk | **Created:** 2022-03-10 | **Updated:** 2022-03-10 | **Comments:** 0
-
-> After starting the program, everything works until it reaches a value more then 2B bytes. Then start write - "doesn't seem to generate any traffic". Proceed works after restart until 2B bytes - then same.
-> 
-> 2022/03/10 11:36:41.789867 runner.go:162: Атака проводиться успішно! Руський воєнний...
 
 ## #279 Support of system variable like ALL_PROXY with schemes http://ip:port and socks5://ip:port for using with tor and packetgen job type `[enhancement, priority: medium]`
 **State:** CLOSED | **Author:** @lollypot | **Created:** 2022-03-10 | **Updated:** 2022-03-31 | **Comments:** 3
@@ -2475,134 +1630,11 @@ Total: **244** issues
 - **@SLDay** (2022-03-09): Dear Arriven, could you please advise how can I solve similar problem. I receive following errors when I run the tool in Windows 10 with Administrator previlages.  `2022/03/09 17:17:49.486864...
 </details>
 
-## #264 How to verify db1000n works as expected?
-**State:** CLOSED | **Author:** @yaskravi | **Created:** 2022-03-09 | **Updated:** 2022-03-09 | **Comments:** 2
-
-> How to verify db1000n works as expected?
-> 1. In docker on virtual machines
-> 2. In Kubernetes
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-09): Depending on what you want to verify you can check for logs, use external network monitoring tools, or set up you own test target and try attacking it with this tool (you'd need a custom config for...
-- **@iamtodor** (2022-03-09): @Arriven I would rather just mention that seeing these logs: ``` Атака проводиться успішно! Руський воєнний корабль іди нахуй! Attack is successful! Russian warship, go fuck yourself! The app has...
-</details>
-
-## #249 sendmsg: invalid argument  - latest version
-**State:** CLOSED | **Author:** @dvoinos | **Created:** 2022-03-09 | **Updated:** 2022-03-09 | **Comments:** 0
-
-> 2022/03/09 07:16:27.979233 config.go:33: Loading config from "https://raw.githubusercontent.com/db1000n-coordina
-> tors/LoadTestConfig/main/config.json"
-> 2022/03/09 07:16:27.979263 config.go:91: New config received, applying
-> 2022/03/09 07:16:27.979875 runner.go:118: 74 job instances...
-
-## #248 Error looking up DNS / Error sending packet `[input needed]`
-**State:** CLOSED | **Author:** @freey0urmind | **Created:** 2022-03-08 | **Updated:** 2022-03-10 | **Comments:** 2
-
-> 2022/03/08 23:13:57.518243 utils.go:153: Error looking up DNS: lookup online.sberbank.ru on 24.200.210.241:53: read udp 172.17.0.2:41928->24.200.210.241:53: i/o timeout
-> 2022/03/08 23:13:57.518279 packetgen.go:65: Error sending packet: lookup online.sberbank.ru on 24.200.210.241:53: read udp...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-09): Both this and #247 seem to indicate that there are a lot of network problems on the instance you are running this app on. Can you check out if anything else is working?
-- **@freey0urmind** (2022-03-09): The issue is not happening anymore without any actions on my side.  Thank you!
-</details>
-
-## #247 The app doesn't seem to generate any traffic `[input needed]`
-**State:** CLOSED | **Author:** @freey0urmind | **Created:** 2022-03-08 | **Updated:** 2022-03-10 | **Comments:** 3
-
-> 2022/03/08 23:04:12.337415 runner.go:157: The app doesn't seem to generate any traffic, please contact your admin
-> 
-> 2022/03/08 23:04:42.338450 config.go:29: Failed to fetch config from "https://raw.githubusercontent.com/db1000n-coordinators/LoadTestConfig/main/config.json": Get...
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-03-09): Can you check if you can download that config manually via curl from the corresponding instance? `curl https://raw.githubusercontent.com/db1000n-coordinators/LoadTestConfig/main/config.json` should...
-- **@freey0urmind** (2022-03-09): >   Yes, I can download. The script was displayed directly in the terminal window.
-- **@freey0urmind** (2022-03-09): One more thing the line " The app doesn't seem to generate any traffic, please contact your admin" is not coming anymore, instead I am getting the "The app has generated approximately XXXXXXXXXX...
-</details>
-
-## #244 terraform aws timeout
-**State:** CLOSED | **Author:** @industral | **Created:** 2022-03-08 | **Updated:** 2022-03-13 | **Comments:** 0
-
-> ```
-> terraform apply -var-file="my.tfvars"
-> ```
-> 
-> **my.tfvars**
-> 
-> ```
-> region           = "eu-central-1"
-> name             = "ir_db1000n"
-> desired_capacity = 32
-> min_size         = 0
-> max_size         = 32
-> instance_type    = "t3.nano"
-> ```
-> 
-> Always timeout by `ir_db1000n": Waiting up to 10m0s:...
-
-## #243 How to use proxylist with db1000n?
-**State:** CLOSED | **Author:** @vjik-jig | **Created:** 2022-03-08 | **Updated:** 2022-03-08 | **Comments:** 1
-
-> How to use proxylist with db1000n?
-> Is it possible "out of the box"? What is the command to use?
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-08): See linked PR on how to configure it for an attack. You can also provide you own list via commandline (run it with `-h` for up to date reference)
-</details>
-
 ## #241 Allow using system proxy settings in http job `[enhancement, priority: medium]`
 **State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-08 | **Updated:** 2022-03-08 | **Comments:** 0
 
 > See https://github.com/valyala/fasthttp/blob/59f94a3f7137d0ad215bd262df7082d1e632a1f7/fasthttpproxy/proxy_env.go
 > for example
-
-## #234 Use mapstructure instead of json.rawmessage in configs in order to be able to switch config format easily `[enhancement, priority: medium]`
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-08 | **Updated:** 2022-03-08 | **Comments:** 0
-
-## #231 go install github.com/Arriven/db1000n@latest fails in golang:alpine docker
-**State:** CLOSED | **Author:** @alexwestside | **Created:** 2022-03-08 | **Updated:** 2022-03-17 | **Comments:** 2
-
-> Hi, 
-> 
-> i'm using Dockerfile like this:
-> 
-> ```
-> FROM golang:alpine
-> CMD go version
-> RUN go install github.com/Arriven/db1000n@latest
-> COPY run.sh ./run.sh
-> CMD [ "./run.sh" ]
-> ENTRYPOINT [ "sh", "-c" ]
-> ```
-> 
-> Command go install github.com/Arriven/db1000n@latest fails with error 
-> 
->  > [2/3] RUN go...
-
-<details><summary>Comments (2)</summary>
-
-- **@alexwestside** (2022-03-08): Update  RUN go get github.com/Arriven/db1000n@latest - helps
-- **@MetaMmodern** (2022-03-14): @alexwestside I'm installing wothout docker. `go get` gives this error: ``` installing executables with 'go get' in module mode is deprecated.         Use 'go install pkg@version' instead.       ...
-</details>
-
-## #225 eats up 2 GB of RAM in ~2 mins and crashes with OOM error
-**State:** CLOSED | **Author:** @nonchalant-enthusiast | **Created:** 2022-03-07 | **Updated:** 2022-03-08 | **Comments:** 3
-
-> behavior is unstable on 2GB VPS, Ubuntu 20.04 using latest docker v0.15.8. while generating approx. the same amount of traffic
-> 
-> ![Screenshot (31)](https://user-images.githubusercontent.com/27624986/157137074-935b5e6f-aa0c-4de9-a431-9744b6a78119.png)
-> 
-> ![Screenshot...
-
-<details><summary>Comments (3)</summary>
-
-- **@sivillakonski** (2022-03-08): @nonchalant-enthusiast , thanks for submitting the issue. I didn't use the profiler this time, so there might be other memory leaks around. Please report if you keep observing any memory related...
-- **@arriven** (2022-03-08): I think the issue might be deeper than the one addressed in the referenced PR. I also don't experience it running latest code as a regular executable but do experience it in docker. Looking at it
-- **@arriven** (2022-03-08): ok, I've found what it is, poked the author and fixing now
-</details>
 
 ## #224 What about AWS Lightsail Containers?
 **State:** CLOSED | **Author:** @paqpaqpaqpaq | **Created:** 2022-03-07 | **Updated:** 2022-04-04 | **Comments:** 19
@@ -2635,22 +1667,6 @@ Total: **244** issues
 - **@arriven** (2022-03-31): How much memory does a single container have? if it's less than 512MB then you might want to disable encryption and prometheus as those lead to occasional memory spikes
 - **@amaestr0** (2022-03-31): > How much memory does a single container have? if it's less than 512MB then you might want to disable encryption and prometheus as those lead to occasional memory spikes  1 GB RAM per container...
 - **@Amet13** (2022-04-04): Terraform implementation:  https://github.com/Arriven/db1000n/pull/488
-</details>
-
-## #223 Container stop after minute of work on VPS server
-**State:** CLOSED | **Author:** @timsofteng | **Created:** 2022-03-07 | **Updated:** 2022-03-07 | **Comments:** 1
-
-> Container stop after one minute on VPS server. On local machine it works fine.
-> 
-> Logs last tail:
-> ```
->  docker logs a4b1ae6eab115b900dbbc016c210436460868c7a56d15f6f03e1c3582e4825d0 --tail 100
-> 2022/03/07 20:19:08.640356 http.go:71: Attacking http://194.54.14.168:80
-> 2022/03/07 20:19:09.500612...
-
-<details><summary>Comments (1)</summary>
-
-- **@iamtodor** (2022-03-07): duplicate. should be closed @Arriven
 </details>
 
 ## #221 Why it finishes working after a minute or less?
@@ -2711,24 +1727,6 @@ Total: **244** issues
 - **@arriven** (2022-03-15): unless you want to help testing out new functionality, but even then it's better running most of your instances on regular images and only 1 or 2 on beta to be able to spot issues in new features...
 </details>
 
-## #216 docker-compose example doesn't work
-**State:** CLOSED | **Author:** @industral | **Created:** 2022-03-07 | **Updated:** 2022-03-07 | **Comments:** 1
-
-> Using slightly modified docker-compose example from https://github.com/Arriven/db1000n/blob/main/docker-compose.yml
-> 
-> ```yaml
-> version: "3.3"
-> 
-> services:
->   # creates OpenVPN Docker container to first provider that randomly picks .conf file
->   ovpn_01:
->     image:...
-
-<details><summary>Comments (1)</summary>
-
-- **@industral** (2022-03-07): `VPN_CONFIG_FILE: "*.ovpn"`  should be `VPN_CONFIG_PATTERN` 🤦‍♂️
-</details>
-
 ## #214 A lot of exceptions
 **State:** CLOSED | **Author:** @Vladisl0ve | **Created:** 2022-03-07 | **Updated:** 2022-03-08 | **Comments:** 6
 
@@ -2747,49 +1745,6 @@ Total: **244** issues
 - **@arriven** (2022-03-07): use log redirection to file and attach that file to the issue
 - **@Vladisl0ve** (2022-03-08): With new patch (0.5.20) there are no problems. I'm gonna close issue if @Liar4u also has no exceptions in cmd
 - **@pvlvld** (2022-03-08): @Vladisl0ve fixed.
-</details>
-
-## #211 Installation trough pipe doesn't work on Debian
-**State:** CLOSED | **Author:** @olegykz | **Created:** 2022-03-07 | **Updated:** 2022-03-07 | **Comments:** 2
-
-> ```
-> admin@ip-XXX:~$ uname -a
-> Linux ip-XXX 4.19.0-14-cloud-amd64 #1 SMP Debian 4.19.171-2 (2021-01-30) x86_64 GNU/Linux
-> 
-> admin@ip-XXX:~$ curl https://raw.githubusercontent.com/Arriven/db1000n/main/install.sh | sh
->   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
->  ...
-
-<details><summary>Comments (2)</summary>
-
-- **@olegykz** (2022-03-07): Installation through `source` works fine:  ``` admin@ip-XXX:~$ source <(curl https://raw.githubusercontent.com/Arriven/db1000n/main/install.sh)   % Total    % Received % Xferd  Average Speed  ...
-- **@olegykz** (2022-03-07): Shall I create an appropriate fix for the README?
-</details>
-
-## #210 I have created DO terraform module, but I can't make pull requests.
-**State:** CLOSED | **Author:** @dddbbbsss | **Created:** 2022-03-07 | **Updated:** 2022-03-31 | **Comments:** 1
-
-> This module creates a number of servers in each of provided region. If you set count = 2 and regions = ["nyc1", "nyc2", "nyc3"] this will create six servers total. Two servers in each of regions.
-> [repo](https://github.com/dddbbbsss/terraform_db1000n)
-
-<details><summary>Comments (1)</summary>
-
-- **@sivillakonski** (2022-03-08): Hi @dddbbbsss, thanks for the contribution! Can you please create a fork of this repo, add your changes, and later just create a PR request from your...
-</details>
-
-## #208 Incorrect traffic statistics displaying
-**State:** CLOSED | **Author:** @IvanFromUa | **Created:** 2022-03-07 | **Updated:** 2022-03-07 | **Comments:** 2
-
-> Displayed traffic statistic is not match with Task manager data about using network.
-> While Task manager is showing this:
-> ![Perfomance_NET_07032022](https://user-images.githubusercontent.com/26162607/157021656-60fed17c-0442-4c8e-9e1f-44b337671b38.png)
-> 
-> db1000n via commad line is displaying: "The...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-07): The metrics in the app are approximate as it doesn't count some internal protocol data, unless the numbers displayed by the app are higher than traffic usage I wouldn't focus on it yet (but if anyone...
-- **@IvanFromUa** (2022-03-07): This answer satisfies me. Thanks!
 </details>
 
 ## #206 New targets for attack 
@@ -2828,89 +1783,6 @@ Total: **244** issues
 - **@Lagovas** (2022-03-17): additionally, db1000n supports embedding config file into the binary. so it can work without remote config files plus, someone can use yandex disc and share there config file by link )
 </details>
 
-## #201 Strange network traffic statistics
-**State:** CLOSED | **Author:** @novikor | **Created:** 2022-03-07 | **Updated:** 2022-03-07 | **Comments:** 4
-
-> **Preconditions**:
-> Linux mint + docker
-> 
-> **Steps to reproduce:**
-> run `docker run --rm ghcr.io/arriven/db1000n:latest`
-> 
-> **Expected result:**
-> Incoming traffic in less than outcoming one
-> 
-> **Actual...
-
-<details><summary>Comments (4)</summary>
-
-- **@arriven** (2022-03-07): I'll check out the config in a minute but I'd assume that this means that targets it attacks don't use any DDoS protection and actually process and respond to requests. I'm not completely sure but it...
-- **@Devaniti** (2022-03-07): ddosing you back is certainly not happening here, you can clearly see that incoming traffic triggered by starting the app so I'd too say that it works as expected
-- **@arriven** (2022-03-07): I think I know which attack is triggering this behavior and this graph is a good indication that the attack is not detected as DDoS by the receiving party. Having inspected the attack I also suspect...
-- **@novikor** (2022-03-07): @Arriven , thank you!
-</details>
-
-## #200 Figure out a way to run packetgen without root permissions `[priority: low]`
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-07 | **Updated:** 2022-03-31 | **Comments:** 2
-
-> Currently packetgen jobs send this type of message when you run the program under regular user
-> `2022/03/07 06:51:38.219638 packetgen.go:77: Error sending packet: listen ip4:tcp 0.0.0.0: socket: operation not permitted`
-> This is happening because it needs raw connection in order to be able to...
-
-<details><summary>Comments (2)</summary>
-
-- **@Boostro** (2022-03-08): I have a similar issue. `packetgen.go:65: Error sending packet: listen ip4:tcp 0.0.0.0: bind: An invalid argument was supplied.`
-- **@neuton** (2022-03-21): I believe the only alternative way (under Linux) is to set CAP_NET_RAW capability on the executable, as mentioned by answers here...
-</details>
-
-## #194 docs with mkdocs
-**State:** CLOSED | **Author:** @m-v-kalashnikov | **Created:** 2022-03-06 | **Updated:** 2022-03-31 | **Comments:** 1
-
-> As soon as project have multilanguage and as I see here will be quite big documentation I assume that it'll be better to use mkdocs.
-> If you find this helpful, I can take care of this.
-> Thanks
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-09): @m-v-kalashnikov sorry, only got to this issue now. Not sure that this project is at that stage yet or if it will get to that stage at all but it would be cool to see how mkdocs work so if you want...
-</details>
-
-## #191 Update tutorial on Google Drive
-**State:** CLOSED | **Author:** @Amet13 | **Created:** 2022-03-06 | **Updated:** 2022-03-07 | **Comments:** 6
-
-> This doc was mentioned in the large telegram channel: https://docs.google.com/document/d/1onvSrNu1FnNKDHD0Mtwf0KoOSuZJOClHqHOs5cu20Mc/edit#
-> 
-> If someone has access to it, it would be great to update it, at least links to binaries
-> 
-> @Arriven fyi
-
-<details><summary>Comments (6)</summary>
-
-- **@iamtodor** (2022-03-06): @Amet13 I see no point to maintain this doc as well. We have two READMEs: - https://github.com/Arriven/db1000n/blob/main/README.md - https://github.com/Arriven/db1000n/blob/main/README-ua.md  I...
-- **@Amet13** (2022-03-06): agree with that
-- **@iamtodor** (2022-03-07): @Amet13 have any actions been applied? I see that the content of the file wasn't changed. @Arriven let's update the doc itself by providing links to READMEs Until that I suggest don't close this...
-- **@Amet13** (2022-03-07): AFAIK, we don't have access to this doc. Seems like someone just copy-pasted readme some time ago and we can't help with updating or deleting this doc
-- **@iamtodor** (2022-03-07): @Amet13 hmmmm.. I thought @Arriven is the author of the doc, no? :D
-- **@Amet13** (2022-03-07): I don't know, as I said, I found link to this doc in the large telegram channel
-</details>
-
-## #190 docker compose random VPM
-**State:** CLOSED | **Author:** @industral | **Created:** 2022-03-06 | **Updated:** 2022-03-07 | **Comments:** 3
-
-> So far I see in docker compose we have predefined VPN endpoints
-> 
-> https://github.com/Arriven/db1000n/blob/main/docker-compose.yml `VPN_CONFIG_FILE: provider01.endpoint01.conf`
-> 
-> I like the approach you did when you provide openvpn folder and it select VPN randomly.
-> it might be very useful to...
-
-<details><summary>Comments (3)</summary>
-
-- **@bitshape** (2022-03-06): @industral I'm working on this, PR incoming in a bit
-- **@bitshape** (2022-03-06): @industral https://github.com/Arriven/db1000n/pull/193
-- **@industral** (2022-03-07): nice! thank you!
-</details>
-
 ## #189 [Discussion] Providing certain restricted access to the repo
 **State:** CLOSED | **Author:** @iamtodor | **Created:** 2022-03-06 | **Updated:** 2022-03-07 | **Comments:** 6
 
@@ -2929,21 +1801,6 @@ Total: **244** issues
 - **@iamtodor** (2022-03-07): @Arriven I cannot accept the invitation <img width="620" alt="image" src="https://user-images.githubusercontent.com/12586108/156991518-e9b0e19b-b208-43bf-b23a-feb23cdfd7b2.png">
 </details>
 
-## #183 Online config won't update when using proxychains-ng
-**State:** CLOSED | **Author:** @SomalianCoolhacker | **Created:** 2022-03-06 | **Updated:** 2022-03-31 | **Comments:** 4
-
-> Hi, my VM (Ubuntu 20.04 LTS) can't reach online config using proxychains (country RU, socks4/5 proxies):
-> > ~$: sudo proxychains ./db1000n
-> > [WARN] Failed to fetch config from "https://raw.githubusercontent.com/db1000n-coordinators/LoadTestConfig/main/config.json": Get...
-
-<details><summary>Comments (4)</summary>
-
-- **@arriven** (2022-03-06): You can download the config and pass the path to it via `-c path/to/file.json` as a workaround
-- **@SomalianCoolhacker** (2022-03-06): Thanks! If I'll create a script that redownloads config occasionally, will an already running db1000n update targets as well?
-- **@arriven** (2022-03-06): db1000n updates targets automatically regardless whether it's pointed at remote or local config. You should even be able to do something like `-c https://remote/config/url,path/to/local/config`- that...
-- **@arriven** (2022-03-31): Closing this as there are already multiple solutions like the one in `examples/docker/static-docker-compose.yml`
-</details>
-
 ## #182  The app doesn't seem to generate any traffic, please contact your admin
 **State:** CLOSED | **Author:** @ivan-huligan | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 6
 
@@ -2960,32 +1817,6 @@ Total: **244** issues
 - **@arriven** (2022-03-06): For async=true ideally we'd implement sending http frames into packetgen or use something similar to send http frames without waiting for response in a more efficient manner. We need to consider ROI...
 </details>
 
-## #177 fix ip
-**State:** CLOSED | **Author:** @krotoveugene | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 4
-
-> https://raw.githubusercontent.com/db1000n-coordinators/LoadTestConfig/main/config.adv.json
-> ```{
->             "type": "http",
->             "args": {
->                 "method": "GET",
->                 "path": "https://1185.114.138.220:443", !!!!!!! 
->                 "interval_ms": 1
->             }
-> ...
-
-<details><summary>Comments (4)</summary>
-
-- **@krotoveugene** (2022-03-06): @arfgdev need to fix typo in IP - https://1185.114.138.220:443
-- **@5har0varik** (2022-03-06): I may create PR but cant locate file in repo =\
-- **@mxmCherry** (2022-03-06): Already PR-ed in relevant repo, even twice:  - https://github.com/db1000n-coordinators/LoadTestConfig/pull/10 - https://github.com/db1000n-coordinators/LoadTestConfig/pull/9
-- **@arriven** (2022-03-06): This was fixed 5 hours ago, thanks for heads up though!
-</details>
-
-## #175 Change cloud instructions to use db1000n-advanced by default `[documentation, priority: high]`
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 0
-
-> I've created a separate image pointing to another config instance using specific attacks that are harder to detect and don't impact bills as much. We should switch guides for clouds to use it by default to avoid issues like high traffic billing or cloud provider locking up the instance thinking it...
-
 ## #170 DDoS effectiveness is not directly tied to the amount of traffic generated `[documentation, help wanted, priority: medium]`
 **State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 5
 
@@ -3001,54 +1832,6 @@ Total: **244** issues
 - **@iamtodor** (2022-03-06): @Amet13 I also have something to add in FAQ
 - **@iamtodor** (2022-03-06): as just general question/answer
 </details>
-
-## #165 Next Milestone | BLOCK
-**State:** CLOSED | **Author:** @bmirnoff | **Created:** 2022-03-06 | **Updated:** 2022-03-06 | **Comments:** 3
-
-> This is a strategic post. 
-> 
-> I think next milestone might be a shift from chaos dos to a situation when doing it is profitable or makes achievements.  
-> This might be done like a blockchain. Proposal:
-> 
-> Layer 2 tokens that might be minted during the execution of attacks. 
-> For instance
-> - each...
-
-<details><summary>Comments (3)</summary>
-
-- **@bmirnoff** (2022-03-06): Goals: - gamification for all remaining world  - maintain **interest**   I think these are important actions and effects from each of them hard to estimate.
-- **@bmirnoff** (2022-03-06): Issues: - tokens might be a part of illegal activity, but who cares now?  - impact on the chain community, also hard to estimate. There are a lot of scum there, so the key point is that this...
-- **@arriven** (2022-03-06): We're currently forced to work in a gray hat area by this awful situation. Minting tokens with this would turn this into black hat. I want to turn it into white hat to be used by security...
-</details>
-
-## #162 Old targets for Linux users
-**State:** CLOSED | **Author:** @Vladisl0ve | **Created:** 2022-03-05 | **Updated:** 2022-03-07 | **Comments:** 3
-
-> Targets on Windows:
->  
-> ![image](https://user-images.githubusercontent.com/36882979/156900359-2be5905b-9771-4b5f-b930-dbab3e96d0a6.png)
-> 
-> Targets on Linux (Ubuntu 21.04) even with some errors on the...
-
-<details><summary>Comments (3)</summary>
-
-- **@Amet13** (2022-03-05): Could you please run the command:  ```bash docker inspect ghcr.io/arriven/db1000n ``` on both Windows and Linux?  Errors on the 2nd screenshot seems related to DNS issues on the host
-- **@Vladisl0ve** (2022-03-05): >   Linux: ``` uladzislau@y700-linux-server:~/russia_ddos$ sudo docker inspect ghcr.io/arriven/db1000n [     {         "Id":...
-- **@Vladisl0ve** (2022-03-07): @Amet13 after last update (0.5.15) works fine  Thank you :)
-</details>
-
-## #157 Creating a list of required protocols to support
-**State:** CLOSED | **Author:** @sivillakonski | **Created:** 2022-03-05 | **Updated:** 2022-03-07 | **Comments:** 0
-
-> Hi there, folks,
-> 
-> I see how many people are currently working on a project, it's just brilliant.
-> Not to intersect with each other, is it possible to have a list of protocols to benchmark?
-> 
-> For example:
-> * VPN jamming
-> * SIP high-load test
-> * etc.
 
 ## #153 Yesterday traffic eat a huge amount of money `[documentation, priority: critical]`
 **State:** OPEN | **Author:** @vgoncharenko | **Created:** 2022-03-05 | **Updated:** 2022-03-25 | **Comments:** 11
@@ -3085,20 +1868,6 @@ Total: **244** issues
 - **@arriven** (2022-03-05): As of now you'll need to recompile the binary for that but it's quite easy to move that setting into the commandline. I think we should do it, will set medium priority and help wanted labels to this...
 </details>
 
-## #146 gcp-installation-ua.md  not working 
-**State:** CLOSED | **Author:** @sergnochevny | **Created:** 2022-03-05 | **Updated:** 2022-03-06 | **Comments:** 4
-
-> cloud instance becomes unavailable after running openvpn3.sh from gcp-installation-ua.md
-> checked on DO and GCP
-
-<details><summary>Comments (4)</summary>
-
-- **@Amet13** (2022-03-05): @Arriven @iamtodor as I mentioned before in this comment: https://github.com/Arriven/db1000n/issues/118#issuecomment-1059743438 this doc looks a bit strange. Can we find an author of it to review...
-- **@iamtodor** (2022-03-05): @Amet13 @Arriven as I suggested before let's keep only English version
-- **@arriven** (2022-03-05): Let's find the author first, if we get no feedback in 12 hours we can delete it but there's no rush yet since these guides expect at least some level of technical expertise which might be enough to...
-- **@arriven** (2022-03-05): I think we should also enforce the rule where at least two other people should validate new guides/big changes to guides and different scripts/terraform/k8s_manifests/docker-compose files which we...
-</details>
-
 ## #145 Incorrect color output in default windows command prompt `[bug, priority: low]`
 **State:** CLOSED | **Author:** @MAKMED1337 | **Created:** 2022-03-05 | **Updated:** 2022-03-31 | **Comments:** 11
 
@@ -3118,60 +1887,6 @@ Total: **244** issues
 - **@Devaniti** (2022-03-06): I'd change the title to something like "Incorrect color output in default windows command prompt"
 - **@iamtodor** (2022-03-06): @Devaniti fully agrees!   Only @MAKMED1337 and @Arriven are able to change the title or are there some people who have the rights and access? cc @Amet13
 - **@pashagolub** (2022-03-06): Use PowerShell instead https://github.com/PowerShell/PowerShell
-</details>
-
-## #143 Consider adding codesenberg/bombardier with proxy attack
-**State:** CLOSED | **Author:** @PXEiYyMH8F | **Created:** 2022-03-05 | **Updated:** 2022-03-31 | **Comments:** 1
-
-> https://github.com/mariotrucco/bombardier/compare/78-add-proxy-support
-> You can run it in 100+ threads and receive superpower (50k https req/s).
-> 
-> ```shell
-> mkdir bombardier_tmp
-> cd bombardier_tmp
-> go mod init bombardier_tmp
-> go mod edit -replace...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-06): Can you try comparing it with this tool being configured to run single http job with "client.async":true and "count":100?
-</details>
-
-## #137 No matching manifest for linux/arm/v7 in the manifest list entries
-**State:** CLOSED | **Author:** @YuriyKu | **Created:** 2022-03-05 | **Updated:** 2022-03-06 | **Comments:** 5
-
-> Hello,
-> I'm trying to run db1000n on raspberry pi3 with next error:
-> 
-> Unable to find image 'ghcr.io/arriven/db1000n:latest' locally
-> latest: Pulling from arriven/db1000n
-> docker: no matching manifest for linux/arm/v7 in the manifest list entries.
-> 
-> My system is:
-> $ cat...
-
-<details><summary>Comments (5)</summary>
-
-- **@iamtodor** (2022-03-05): @YuriyKu take a look on https://github.com/Arriven/db1000n/issues/116
-- **@Amet13** (2022-03-05): Support for arm/v7 already in master. In the next release, it will be deployed. Keep following https://github.com/Arriven/db1000n/pkgs/container/db1000n
-- **@Amet13** (2022-03-06): @YuriyKu please try to pull the latest image again, it should work. Introduced arm/v7 support in 0.5.13  <img width="764" alt="Screenshot 2022-03-06 at 12 04 37"...
-- **@YuriyKu** (2022-03-06): Hello, it works now. Thanks a lot.
-- **@YuriyKu** (2022-03-06): Issue has been resolved. Thanks. Have a nice day.
-</details>
-
-## #136 Performance and multithreading
-**State:** CLOSED | **Author:** @Devaniti | **Created:** 2022-03-05 | **Updated:** 2022-03-06 | **Comments:** 4
-
-> On my machine, even with free VPN, I can get at least 10x performance by launching multiple instances
-> We need to implement multithreading, so it can utilize all available resources
-> Will try to do myself, but since I'm not that good at Golang I may need some help
-
-<details><summary>Comments (4)</summary>
-
-- **@Devaniti** (2022-03-05): ok, it seems that there's multithreading, but there's still bottleneck somewhere
-- **@Devaniti** (2022-03-05): this is the offender, `for i := 0; i < jobDesc.Count; i++ {` `jobDesc.Count` is just too low
-- **@arriven** (2022-03-05): @Devaniti I wouldn't call it a bottleneck but rather a design limitation. The app is configurable to generate set amount of traffic (controlled by the number of targets, their type, and attack...
-- **@lomchik** (2022-03-06): So probably we should update targets to attack for example search endpoints  like https://www.rt.com/search?q=stupid+russian+bitches.
 </details>
 
 ## #133 Network activity went down today. `[bug, priority: high]`
@@ -3231,96 +1946,6 @@ Total: **244** issues
 - **@synapse-unix** (2022-03-06): We can close the issue. We don't have issue with targets update inside running containers.
 </details>
 
-## #131  Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /root/openvpn.
-**State:** CLOSED | **Author:** @mykola-dev | **Created:** 2022-03-05 | **Updated:** 2022-03-31 | **Comments:** 2
-
-> Guys, need help with running on ubuntu with custom ovpn config. i put the .ovpn into the openvpn dir. running with ./run.sh
-> get this error:
-> ```
-> ubuntu@ip-xxxxxxxxx:~/db1000n$ sudo ./run.sh
-> ./run.sh: 1: Bad substitution
-> unable to prepare context: unable to evaluate symlinks in Dockerfile path:...
-
-<details><summary>Comments (2)</summary>
-
-- **@vgoncharenko** (2022-03-05): If you add: set -ex  at the top of run.sh, it will print you everything it's going to run.  For some reason, it tries to use root's dir as current. Just to confirm it, add that command and try...
-- **@arriven** (2022-03-05): @bitshape seems like this is your area of expertise
-</details>
-
-## #129 k8s. HealthCheck
-**State:** CLOSED | **Author:** @oleksdovz | **Created:** 2022-03-05 | **Updated:** 2022-03-05 | **Comments:** 4
-
-> k8s. HealthCheck
-> Було б добре мати для аплікухи якийсь HealthCheck
-> Тобто якшо пода залипла то її рестартнутию
-
-<details><summary>Comments (4)</summary>
-
-- **@oleksdovz** (2022-03-05): Крім того я знайшов такий ресурс із проксі - https://t.me/proxy_list_misha можливо можна інтегрувати для постійного оновленння або перечитання проксі коли пода рестартує
-- **@Amet13** (2022-03-05): Я тестив функціонал імежду, якшо щось не так з аппкою, вона вилітає и кубер автоматично перезапскає под
-- **@oleksdovz** (2022-03-05): ок, добре,  там проксі http?  як щодо файлів із  https://t.me/proxy_list_misha? вони оновлюються дуже часто. в теорії  список http proxy  можна оновляти при старті контейнера в поді, тільки  файл...
-- **@arriven** (2022-03-05): @oleksdovz to be completely honest I'm still not convinced proxies actually improve the quality of attacks as there are different opinions on the topic and most of them say that it depends. This...
-</details>
-
-## #126 Groups  by different types of attack
-**State:** CLOSED | **Author:** @bmirnoff | **Created:** 2022-03-05 | **Updated:** 2022-03-06 | **Comments:** 2
-
-> Register each running client somewhere and assign the type of attack for each group.
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-05): @bmirnoff can you provide more info on what you mean and what benefit you want to get? There are a lot of improvement areas in this app now and it would help to prioritize work
-- **@bmirnoff** (2022-03-06): Yes I think it makes 0 sense @Arriven
-</details>
-
-## #125 How use alpine/bombardier via vpn? `[question]`
-**State:** CLOSED | **Author:** @ilwsm | **Created:** 2022-03-05 | **Updated:** 2022-03-31 | **Comments:** 4
-
-> For example how use ?
-> `docker run -ti --rm alpine/bombardier -c 1000 -d 3600s -l https://mil.ru`
-> 
-> like in https://github.com/Arriven/db1000n/blob/main/run.sh
-
-<details><summary>Comments (4)</summary>
-
-- **@iamtodor** (2022-03-05): @goodandrewsoft could you please expand your question? Basically, all you need is to turn on VPN and run `docker run ghcr.io/arriven/db1000n` or just run binaries. You don't need `alpine/bombardier`...
-- **@ilwsm** (2022-03-05): I know that. I'm already use db1000n via [run.sh](https://github.com/Arriven/db1000n/blob/main/run.sh)  But, sometimes, i want use `alpine/bombardier` manually and i want automate my process like...
-- **@arriven** (2022-03-05): I'll assign this to @bitshape as he's the author of that implementation and knows about it more than me.
-- **@vgoncharenko** (2022-03-05): It's not detailed instruction, but you asked a question in the wrong repo. It's a different project from bombardier. So I have no knowledge about db1000n or bombardier, I'm just like you - a user,...
-</details>
-
-## #124 How to stop the program?
-**State:** CLOSED | **Author:** @mzahar | **Created:** 2022-03-05 | **Updated:** 2022-03-05 | **Comments:** 3
-
-> Is there a way to stop program? Or I need only uninstall it to stop?
-> Device: Mac Book Pro Intel
-
-<details><summary>Comments (3)</summary>
-
-- **@iamtodor** (2022-03-05): @mzahar you run it as binary file?
-- **@Devaniti** (2022-03-05): If you don't see terminal window with program then it's not running
-- **@arriven** (2022-03-05): Anything that would work for a regular program would work here (I'm assuming you use binary install which is described in the instruction for users). If you see the terminal where the program is...
-</details>
-
-## #123 [improvement] [win] BAT file with supervisor/guardian
-**State:** CLOSED | **Author:** @5har0varik | **Created:** 2022-03-05 | **Updated:** 2022-03-05 | **Comments:** 2
-
-> To prevent windows crash add simple supervisor in .bat file. Add .bat file to .zip package. 
-> For example:
-> ```
-> echo starting
-> :start
-> start /w db1000n.exe
-> echo restarting
-> goto start
-> ```
-
-<details><summary>Comments (2)</summary>
-
-- **@5har0varik** (2022-03-05): I may create a PR, tell me what changes needed (Script location, doc changes, etc)
-- **@arriven** (2022-03-05): @5har0varik PR would be nice, not sure about the location, I'd probably make the scripts/ subfolder for the script (and move install.sh there).   Also see...
-</details>
-
 ## #121 Docker image is not being updated for 21 hours - new targets are not applied
 **State:** CLOSED | **Author:** @synapse-unix | **Created:** 2022-03-05 | **Updated:** 2022-03-06 | **Comments:** 10
 
@@ -3341,11 +1966,6 @@ Total: **244** issues
 - **@arriven** (2022-03-06): github is a CDN, which is designed for this specific type of load we use it for (it can and should be able to handle A LOT more load than this). This is the core of an app and I was very careful when...
 - **@synapse-unix** (2022-03-06): I am closing this issue, as I see targets was updated, with the new image
 </details>
-
-## #119 Announcement to contributors: Code restructure `[priority: critical]`
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-05 | **Updated:** 2022-03-05 | **Comments:** 0
-
-> Considering the amount of contributions I decided to spend an hour or two restructuring the code a bit to reduce chances of merge conflicts in the future. Please avoid doing any major work until I resolve this issue or make sure you will be able to re-apply your work after I commit the code...
 
 ## #118 Documentation structure `[documentation, help wanted, good first issue, priority: medium]`
 **State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-05 | **Updated:** 2022-03-10 | **Comments:** 18
@@ -3376,58 +1996,6 @@ Total: **244** issues
 - **@iamtodor** (2022-03-07): CODEOWNERS functionality was implemented in https://github.com/Arriven/db1000n/pull/187
 - **@iamtodor** (2022-03-07): @Arriven @Amet13 I think we can close this issue
 - **@m-v-kalashnikov** (2022-03-08): @Arriven @Amet13 I can move all docs to MKdocs which would be hosted on GitHub pages
-</details>
-
-## #116 ARM and RaspberryPi support
-**State:** CLOSED | **Author:** @vovagorodok | **Created:** 2022-03-05 | **Updated:** 2022-03-05 | **Comments:** 0
-
-> For latest raspberry pi os:
-> ```
-> ~/db1000n $ docker run ghcr.io/arriven/db1000n
-> Unable to find image 'ghcr.io/arriven/db1000n:latest' locally
-> latest: Pulling from arriven/db1000n
-> docker: no matching manifest for unknown in the manifest list entries.
-> See 'docker run --help'.
-> ```
-
-## #115 DigitalOcean Networking disabled error
-**State:** CLOSED | **Author:** @Leta0n | **Created:** 2022-03-04 | **Updated:** 2022-03-06 | **Comments:** 2
-
-> Can I limit network usage somehow? DO keep banning my droplets because of network abuse
-> ![IMG_FF722C95255B-1](https://user-images.githubusercontent.com/3305500/156847961-2f8709fc-4f1f-46e1-8e3b-d5fbf0cf61b6.jpeg)
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-05): You can use custom config for that (see ##Configuration part of the README for reference). I'm currently working with admins to try creating a separate config to use with cloud providers that would...
-- **@Leta0n** (2022-03-06): Works great now, thanks!
-</details>
-
-## #111 Embedded VPN
-**State:** CLOSED | **Author:** @ctukraine22 | **Created:** 2022-03-04 | **Updated:** 2022-03-05 | **Comments:** 2
-
-> Народ, можливо варто додати вбудовану роботу через vpn?
-> ось у мене є приклад на docker compose https://github.com/ctukraine22/runner
-> суть в тому, що підіймається контейнер з vpn, і контейнер з db1000n, потім періодично vpn перепідключається.
-> Щоб запустити достатньо тільки дати налаштування для...
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-04): Check out supervisord/ and run/ subfolders for that, feel free to open a PR if it can be further improved
-- **@ctukraine22** (2022-03-05): бачу вже доку додали https://github.com/Arriven/db1000n/blob/main/docs/advanced-users-and-devs.md#docker--openvpn
-</details>
-
-## #105 OOM issue 
-**State:** CLOSED | **Author:** @kuzm1ch | **Created:** 2022-03-04 | **Updated:** 2022-03-31 | **Comments:** 1
-
-> <img width="766" alt="Screenshot 2022-03-04 at 20 49 13" src="https://user-images.githubusercontent.com/32264674/156824221-c20172b9-4e72-4da1-89af-008f6ebed1ca.png">
-> 
-> ```
-> $ docker ps -a
-> CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS            ...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-04): ```bash $ docker ps -a CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS                        PORTS     NAMES 12b8c086e5ec   12b8c086e5ec         ...
 </details>
 
 ## #101 [infrastructure as a code]: DigitalOcean `[help wanted]`
@@ -3462,29 +2030,6 @@ Total: **244** issues
 - **@Amet13** (2022-03-06): It would be great to do a check, but without access to the cloud, it's impossible. For those changes related to terraform we could ask for `terraform plan` output to review changes at least
 - **@iamtodor** (2022-03-06): @Amet13 yeah, I suppose we need to have the individual account
 - **@arriven** (2022-03-07): I've created a "triage needed" label for those types of PRs to mark that we need someone other than author to check that the change is working. I'll add that label here just so that you could find it...
-</details>
-
-## #99 [infrastructure as a code]: AWS
-**State:** CLOSED | **Author:** @iamtodor | **Created:** 2022-03-04 | **Updated:** 2022-03-04 | **Comments:** 1
-
-> The same way we have it on GCP https://github.com/Arriven/db1000n/tree/main/terraform/gcp_expressvpn We need the infra for AWS EC2 instances
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-04): Should be fixed by https://github.com/Arriven/db1000n/commit/2d5a4bab050d9d366182282a4b6f10986c227570
-</details>
-
-## #96 Is there a benefit to running the program around the clock? 
-**State:** CLOSED | **Author:** @TarasKasprik | **Created:** 2022-03-04 | **Updated:** 2022-03-04 | **Comments:** 1
-
-> Is there a benefit to running the program around the clock? 
-> Do you need to run it only after receiving a command from the coordinators? 
-> 
-> Different sources have different information on this issue.
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-04): You can safely run this app around the clock. You can assume it restarts itself every minute and gets new targets  Restarts is an approximation, in reality it's a bit smarter than that but I won't...
 </details>
 
 ## #89 install.sh failed on arm architecture
@@ -3531,27 +2076,6 @@ Total: **244** issues
 - **@arriven** (2022-03-04): See #78 for reference
 </details>
 
-## #82 The app doesn't seem to generate any traffic, please contact your admin
-**State:** CLOSED | **Author:** @QDanteQ | **Created:** 2022-03-04 | **Updated:** 2022-03-04 | **Comments:** 1
-
-> WARN]  2022/03/04 12:49:51 [WARN] The app doesn't seem to generate any traffic, please contact your admin
-> [ERROR] 2022/03/04 12:49:51 github.com/Arriven/db1000n/logs.Logger.Error:logs.go:50 [ERROR] error sending packet: listen ip4:tcp 0.0.0.0: socket: operation not permitted
-> [ERROR] 2022/03/04...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-04): There was a small misconfiguration by the new admin, it was fixed within 10 minutes (see https://github.com/db1000n-coordinators/LoadTestConfig/commit/831f3fcaeed704aa294a5d12e1295e09389eb5c1)
-</details>
-
-## #79 if you do not have time to update the hosts, who will then take my PR? `[question]`
-**State:** CLOSED | **Author:** @KhalupiakYaroslav | **Created:** 2022-03-04 | **Updated:** 2022-03-31 | **Comments:** 2
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-03-04): The problem right now is that I don't have enough time near my laptop to do that. I'm currently organizing admins to take care of the config but regardless of that if you author a PR I can review and...
-- **@KhalupiakYaroslav** (2022-03-04): дякую! тримайся друже, ви мега круті
-</details>
-
 ## #78 Write config generator so simplify management `[enhancement, help wanted]`
 **State:** CLOSED | **Author:** @Andrmist | **Created:** 2022-03-04 | **Updated:** 2022-03-31 | **Comments:** 5
 
@@ -3566,37 +2090,6 @@ Total: **244** issues
 - **@securims** (2022-03-19): I've written a small helm chart to save myself from copy-pasting simple jobs over and over, feel free to use it to save some time - https://github.com/securims/db1000n-config-generator
 </details>
 
-## #77 Хто координує дії?? 
-**State:** CLOSED | **Author:** @KhalupiakYaroslav | **Created:** 2022-03-04 | **Updated:** 2022-03-04 | **Comments:** 1
-
-> Отримав посилання на image від кібер козаків, але хости які атакує скрипт не співпадають з тим що вони пишуть у себе в групі
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-04): Yeah, we're still organizing the process with admins (we need to set up a training but human interactions take time especially since most of us are in Ukraine and have to regularly run to shelter)....
-</details>
-
-## #75  ERRO[0174] error waiting for container: EOF 
-**State:** CLOSED | **Author:** @mvkorobkov | **Created:** 2022-03-04 | **Updated:** 2022-03-04 | **Comments:** 3
-
-> останавливается по ошибке
-> добавьте докеркомпоз с авторестартом и заодно многопоточностью
-
-<details><summary>Comments (3)</summary>
-
-- **@mvkorobkov** (2022-03-04): docker-compose.yml:  version: '3' services:   d1:     image: ghcr.io/arriven/db1000n:latest     restart: always  ----- docker-compose up --scale d1=5
-- **@mvkorobkov** (2022-03-04): похоже падает сам докер, нужно другое решение
-- **@arriven** (2022-03-04): Feel free to make a pull request with that docker compose or use an executable directly on your system. You can check #54 for the most common issue with docker/cloud and check for workarounds...
-</details>
-
-## #73 .
-**State:** CLOSED | **Author:** @vinnik-dmitry07 | **Created:** 2022-03-03 | **Updated:** 2022-03-04 | **Comments:** 1
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-04): There are more effecient jobs in this program that do that task more effeciently (See #57 for some explanations on the topic). Also it seems like @securims just authored a PR (#76) that allows to use...
-</details>
-
 ## #72 Panic 
 **State:** CLOSED | **Author:** @izac1 | **Created:** 2022-03-03 | **Updated:** 2022-03-04 | **Comments:** 1
 
@@ -3607,18 +2100,6 @@ Total: **244** issues
 <details><summary>Comments (1)</summary>
 
 - **@arriven** (2022-03-04): The stack looks like crash due to OOM - it lacks RAM to parse the config and attack all the targets it's configured to. Check #54 for possible workarounds and more info
-</details>
-
-## #69 Update Google Doc with latest versions
-**State:** CLOSED | **Author:** @bunge12 | **Created:** 2022-03-03 | **Updated:** 2022-03-04 | **Comments:** 3
-
-> I can volunteer to keep updated :)
-
-<details><summary>Comments (3)</summary>
-
-- **@arriven** (2022-03-03): I'll poke guys who manage it and suggest them your help
-- **@iamtodor** (2022-03-04): @Arriven once you merge #88 PR this issue won't be relevant
-- **@iamtodor** (2022-03-04): the issue can be closed as PR has been merged @bunge12 @Arriven
 </details>
 
 ## #67 Docker image won't run on arm64 devices `[bug, enhancement]`
@@ -3657,16 +2138,6 @@ Total: **244** issues
 - **@arriven** (2022-03-03): How much RAM is allocated to docker? See #54 as it seems to have pretty similar symptoms. If it turns out to be something else and increasing the allocated RAM doesn't fix the issue feel free to...
 </details>
 
-## #62 fetching json config: unexpected end of JSON input
-**State:** CLOSED | **Author:** @Firefret | **Created:** 2022-03-03 | **Updated:** 2022-03-03 | **Comments:** 1
-
-> Title
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-03): I don't remember if it was a warning or an error. I think it was a warning and thus not critical to the performance of the tool. Anyway the latest release (v0.5.9) already has this fixed and further...
-</details>
-
 ## #58 Only seems to attack 3 IPs `[bug]`
 **State:** CLOSED | **Author:** @WeGoToMars | **Created:** 2022-03-03 | **Updated:** 2022-03-04 | **Comments:** 10
 
@@ -3691,18 +2162,6 @@ Total: **244** issues
 - **@WeGoToMars** (2022-03-03): @Arriven `-c https://blah` completely fixed the issue for me, it now works on multiple IPs and shows logs correctly. Thanks!
 - **@arriven** (2022-03-04): @WeGoToMars cool, but please check https://github.com/db1000n-coordinators/LoadTestConfig and remove that commandline argument as soon as activity starts there to keep being up to date with current...
 - **@WeGoToMars** (2022-03-04): @Arriven `db1000n.exe -c https://github.com/db1000n-coordinators/LoadTestConfig/blob/main/config.json` seems to work now  Without any arguments, the logging works differently(?)  db1000n.exe -c...
-</details>
-
-## #57 Question: How this program works? `[question]`
-**State:** CLOSED | **Author:** @antl31 | **Created:** 2022-03-03 | **Updated:** 2022-03-03 | **Comments:** 1
-
-> Hello dear Author. I have tested your program wth custom config on my default apache server. Config has type: http , get method. 
-> Also i have tested other tools, https://github.com/codesenberg/bombardier and https://github.com/MHProDev/MHDDoS 
-> So you can see that bombarier has a lot of RPC...
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-03): So there are couple things I'd like to note here:  - This tool supports not only HTTP/HTTPS requests but also TCP/UDP/IP flood configurable enough to support more complex attack patterns like syn...
 </details>
 
 ## #55 Security issue because of public repo `[wontfix]`
@@ -3773,73 +2232,6 @@ Total: **244** issues
 - **@AndriiNytsyk** (2022-03-02): Fixed on v0.5.8. Thanks!
 </details>
 
-## #34 Add ability to configurate http/socks proxies via config for each attack `[enhancement]`
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-03-01 | **Updated:** 2022-03-31 | **Comments:** 0
-
-## #28 Document config `[documentation, good first issue]`
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-28 | **Updated:** 2022-03-02 | **Comments:** 1
-
-> Write understandable documentation for the config so that people could use their own setup when deploying to clusters
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-03-02): Done
-</details>
-
-## #22 bash and power-shell script of ease of installation
-**State:** CLOSED | **Author:** @zmitry | **Created:** 2022-02-27 | **Updated:** 2022-02-28 | **Comments:** 0
-
-> We need script similar to brew and other single line install scripts which will install appropriative binary/os and run the code. 
-> 
-> ```
-> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-> ```
-
-## #19 Gather list of free vpns and best vpn locations to use(ideally russian) `[documentation, good first issue]`
-**State:** CLOSED | **Author:** @zmitry | **Created:** 2022-02-27 | **Updated:** 2022-03-07 | **Comments:** 8
-
-> ideally it would be good to spin up russian vpn for attacks
-
-<details><summary>Comments (8)</summary>
-
-- **@zmitry** (2022-02-27): tunnel bear gives 10gb of traffic for free https://www.tunnelbear.com/   swiss and Bulgaria seems to work fine for russia.
-- **@sanohin** (2022-02-27): Free with a promocode https://my.clearvpn.com/promo/redeem?code=SAVEUKRAINE
-- **@maxkoshevoi** (2022-02-28): [UrbanVPN](https://www.urban-vpn.com/) is also a possible candidate. It worked well before, needs validation if it works now
-- **@quiberr** (2022-03-03): windscribe 15gb via confirm tempmail
-- **@horodchukanton** (2022-03-03): windscribe 30gb with promo ПИЗДЕЦ
-- **@iamtodor** (2022-03-04): @Arriven please close the issue as it was implemented in https://github.com/Arriven/db1000n/pull/94
-- **@iamtodor** (2022-03-04): update: was re-implemented in https://github.com/Arriven/db1000n/pull/104 @Arriven
-- **@iamtodor** (2022-03-06): @zmitry @Arriven @Amet13 please close this issue
-</details>
-
-## #18 better list of resources to attack. `[documentation, good first issue]`
-**State:** CLOSED | **Author:** @zmitry | **Created:** 2022-02-27 | **Updated:** 2022-03-31 | **Comments:** 2
-
-> gather list from different places https://t.me/itarmyofukraine2022.
-
-<details><summary>Comments (2)</summary>
-
-- **@arriven** (2022-02-27): You can also go ahead and add those targets through a PR here https://github.com/db1000n-coordinators/LoadTestConfig
-- **@sanohin** (2022-02-28): `https://api.mosgorpass.ru/v8.2/stop` - query all bus stops `https://api.mosgorpass.ru/v8.2/stop/{{ stop_id }}` - `stop_id` from the list from the prev endpoint
-</details>
-
-## #16 httpstorm
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-03-03 | **Comments:** 0
-
-## #15 slowloris
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-03-03 | **Comments:** 2
-
-> integrate https://github.com/valyala/goloris
-
-<details><summary>Comments (2)</summary>
-
-- **@zmitry** (2022-02-27): will take it
-- **@zmitry** (2022-02-27): https://github.com/Arriven/db1000n/pull/21
-</details>
-
-## #12 (improve metrics) track traffic generated by protocol headers and utility messages not exposed to go runtime
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-03-22 | **Comments:** 0
-
 ## #9 Improve logging `[enhancement, help wanted, good first issue]`
 **State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-02-27 | **Comments:** 2
 
@@ -3850,19 +2242,6 @@ Total: **244** issues
 
 - **@arriven** (2022-02-27): Still need to implement disabling particular log levels
 - **@arriven** (2022-02-27): Implemented in https://github.com/Arriven/db1000n/commit/7728c69990055eaacd903501c17f60a04bb55511
-</details>
-
-## #8 DNS stress
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-03-09 | **Comments:** 4
-
-> - could integrate https://github.com/MickaelBergem/dnsstresss/blob/master/dnsstresss.go
-
-<details><summary>Comments (4)</summary>
-
-- **@lonli078** (2022-02-27): I will do it
-- **@arfgdev** (2022-03-05): @lonli078 how is it going? do you need any help?
-- **@AndriiChuzhynov** (2022-03-05): working on it
-- **@AndriiChuzhynov** (2022-03-07): I think this can be closed
 </details>
 
 ## #7 Implement or integrate more sophisticated attack patterns `[documentation, enhancement]`
@@ -3882,25 +2261,6 @@ Total: **244** issues
 
 - **@arriven** (2022-02-27): Feel free to add more options with technical info, I'll be creating sub-tasks
 - **@o-volkov** (2022-02-27): slowloris - https://github.com/valyala/goloris
-</details>
-
-## #6 Integrate write hooks to metrics storage into actual worker code
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-02-27 | **Comments:** 1
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-02-27): Integrated basic implementation, need to improve and all the protocol info not directly exposed to go
-</details>
-
-## #5 Implement background thread to read and output these metrics into logs on regular interval
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-02-27 | **Comments:** 0
-
-## #4 Define and implement global metrics storage with thread-safe read-write operations to be used by other parts
-**State:** CLOSED | **Author:** @arriven | **Created:** 2022-02-27 | **Updated:** 2022-02-27 | **Comments:** 1
-
-<details><summary>Comments (1)</summary>
-
-- **@arriven** (2022-02-27): Implemented in https://github.com/Arriven/db1000n/commit/c2186cf9cfdb9b1a5c0ca1affab6773bc0857736
 </details>
 
 ## #2 Metrics `[enhancement]`
